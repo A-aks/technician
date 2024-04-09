@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import moduleName, { CloseButton } from 'react-bootstrap'
+
 import Image from 'react-bootstrap/Image'
 import { Link } from 'react-router-dom';
-import { NavLink } from 'react-bootstrap';
+import { NavLink, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Button from 'react-bootstrap/Button'
@@ -14,6 +14,7 @@ import { Envelope, Facebook, Instagram, TwitterX, Whatsapp, X, Youtube } from 'r
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaYoutube, FaSquareInstagram, FaSquareXTwitter, FaSquareWhatsapp } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
+
 
 
 const NavBar: React.FC = () => {
@@ -34,18 +35,20 @@ const NavBar: React.FC = () => {
     };
 
     useEffect(() => {
-     
+
     }, []);
 
-    
+
 
     return (
         <>
             {['sm'].map((expand) => (
-                <Navbar expand={expand} className="bg-body-tertiary mb-3 fixed-top">
+                <Navbar expand={expand} className="bg-body-tertiary mb-3 fixed-top" sticky='top'>
                     <Container fluid>
-                        <Image height={45} src={``} roundedCircle />
-                        <Navbar.Brand href="#" className='ms-2 '>{"Technicianwale"}</Navbar.Brand>
+                        <Image src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'} />
+                        <Navbar.Brand href="#" className='ms-2 '>
+                            <div className='flex flex-column m-0 p-0'><p className='p-0 m-0'>Technicianwale</p></div>
+                        </Navbar.Brand>
                         <Navbar.Toggle className='shadow-none border-0' aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={handleShow} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -53,20 +56,31 @@ const NavBar: React.FC = () => {
                             placement="end"
                             show={show} onHide={handleClose}
                         >
-                            <Offcanvas.Header closeButton>
-
-                                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-
-                                    <Image height={45} src={`https://jpkushwaha.online//api/media/${adminData.profile_img}`} roundedCircle className='me-2' />
-                                    {adminData.admin_name}
+                            <Offcanvas.Header className='py-1' closeButton>
+                                <Image src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'} />
+                                <Offcanvas.Title className='justify-content-center' id={`offcanvasNavbarLabel-expand-${expand}`}>
+                                    TechnicianWale
                                 </Offcanvas.Title>
+
                             </Offcanvas.Header>
-                            <Offcanvas.Body  >
+                            <Offcanvas.Body className='p-1' >
                                 <Nav className="justify-content-start flex-grow-1 pe-3 gap-2">
-                                    <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2 py-2 rounded-md text-black fw-5 mt-1 md:mt-0'>Home</Nav.Link>
-                                    <Nav.Link as={Link} onClick={handleClose} to={"/Gallery"} className=' text-start btn custom-btn-primary px-2 py-2 rounded-md text-black font-weight-bold mt-1 md:mt-0' >Gallery</Nav.Link>
-                                    <Nav.Link as={Link} onClick={handleClose} to={"/activities"} className=' text-start btn custom-btn-primary px-2 py-2 rounded-md text-black font-weight-bold mt-1 md:mt-0' > Activities </Nav.Link>
-                                    <Nav.Link as={Link} onClick={handleClose} to={"/about"} className=' text-start btn custom-btn-primary px-2 py-2 rounded-md text-black font-weight-bold mt-1 md:mt-0'>Contact us</Nav.Link>
+                                    <p className='d-block d-sm-none bg-warning rounded text-center'>Service at your doorstep</p>
+                                    <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2  rounded-md text-black fw-5 mt-1 md:mt-0'>Home</Nav.Link>
+                                    <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/complain'} >Complain</Nav.Link>
+                                    <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/complain'} > Technician</Nav.Link>
+                                    <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black font-weight-bold mt-1 md:mt-0'>Contact us</Nav.Link>
+                                    <NavDropdown className='text-start btn custom-btn-primary p-0 ps-1  rounded-md text-black font-weight-bold mt-1 md:mt-0' title="Services" id="basic-nav-dropdown">
+                                        <NavDropdown.Item href="#action/3.1">AC Repairing</NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.2">
+                                            Another action
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item href="#action/3.4">
+                                            Separated link
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
 
                                 </Nav>
                                 <Nav className="justify-content-end flex-grow-1 pe-3 mt-2">
@@ -116,7 +130,7 @@ const NavBar: React.FC = () => {
                                         <div className='d-flex flex-sm-row flex-column'>
                                             <div className='d-flex justify-content-start p-0'>
                                                 <FaSquareWhatsapp className='fs-2' color='green' />
-                                                <p className='ms-2'>{adminData.mobile}</p>
+                                                <p className='ms-2'>9171959701</p>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +139,7 @@ const NavBar: React.FC = () => {
                                             <div className='d-flex justify-content-start p-0'>
                                                 <a href="mailto:jpkushwaha06@outlook.com" className='link-offset-2 link-underline link-underline-opacity-0 d-flex'>
                                                     <IoMail className='fs-2' color='#DB4437' />
-                                                    <p className='ms-2'>{adminData.email}</p>
+                                                    <p className='ms-2'>help@Technicianwale.com</p>
                                                 </a>
 
                                             </div>
