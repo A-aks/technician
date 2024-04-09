@@ -24,7 +24,7 @@ const NavBar: React.FC = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    
     const handleHomeClick = () => {
         handleClose();
         if (window.location.pathname !== "/") {
@@ -43,8 +43,8 @@ const NavBar: React.FC = () => {
     return (
         <>
             {['sm'].map((expand) => (
-                <Navbar expand={expand} className="bg-body-tertiary mb-3 fixed-top" sticky='top'>
-                    <Container fluid>
+                <Navbar expand={expand} className="bg-body-tertiary mb-1 fixed-top card m-1" sticky='top'>
+                    <Container className='rounded' style={{background:'#f8f8f8'}} fluid>
                         <Image src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'} />
                         <Navbar.Brand href="#" className='ms-2 '>
                             <div className='flex flex-column m-0 p-0'><p className='p-0 m-0'>Technicianwale</p></div>
@@ -56,12 +56,11 @@ const NavBar: React.FC = () => {
                             placement="end"
                             show={show} onHide={handleClose}
                         >
-                            <Offcanvas.Header className='py-1' closeButton>
+                            <Offcanvas.Header className='mt-1 mx-2' closeButton>
                                 <Image src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'} />
                                 <Offcanvas.Title className='justify-content-center' id={`offcanvasNavbarLabel-expand-${expand}`}>
                                     TechnicianWale
                                 </Offcanvas.Title>
-
                             </Offcanvas.Header>
                             <Offcanvas.Body className='p-1' >
                                 <Nav className="justify-content-start flex-grow-1 pe-3 gap-2">

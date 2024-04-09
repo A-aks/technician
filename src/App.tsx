@@ -4,7 +4,7 @@ import './App.css';
 import { Button, Stack } from 'react-bootstrap';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
-import {BrowserRouter as Router, Routes, Route,To} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import ContactUs from './pages/ContactUs';
 function App() {
   return (
