@@ -66,7 +66,7 @@ const NavBar: React.FC = () => {
                                 <Nav className="justify-content-start flex-grow-1 pe-3 gap-2">
                                     <p className='d-block d-sm-none bg-warning rounded text-center'>Service at your doorstep</p>
                                     <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2  rounded-md text-black fw-5 mt-1 md:mt-0'>Home</Nav.Link>
-                                    <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/complain'} >Complain</Nav.Link>
+                                    <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/complain'} >Book New Service</Nav.Link>
                                     <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/complain'} > Technician</Nav.Link>
                                     <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black font-weight-bold mt-1 md:mt-0'>Contact us</Nav.Link>
                                     <NavDropdown className='text-start btn custom-btn-primary p-0 ps-1  rounded-md text-black font-weight-bold mt-1 md:mt-0' title="Services" id="basic-nav-dropdown">
