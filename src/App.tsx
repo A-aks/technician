@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import ContactUs from './pages/ContactUs';
+import Technician from './pages/Technician';
+
 function App() {
   return (
     <Router>
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/contact-us' element={<ContactUs/>} />
+          <Route path='/technician' element={<Technician/>} />
+         
         </Routes>
     </Router>
   );
