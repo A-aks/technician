@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+.custom-container-bg {
+  background-color: #f9f9f9; /* Light gray background color */
+}
+
+.custom-form-container {
+  background-color: #ffffff; /* White background color */
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.custom-header {
+  color: #333333; /* Dark text color */
+}
+
+.custom-label {
+  color: #666666; /* Light text color */
+}
+
+.custom-input {
+  background-color: #f5f5f5; /* Light gray background color */
+  border: none;
+}
+
+.custom-select {
+  background-color: #f5f5f5; /* Light gray background color */
+  border: none;
+}
+
+.custom-textarea {
+  background-color: #f5f5f5; /* Light gray background color */
+  border: none;
+}
+
+.custom-btn {
+  background-color: #007bff; /* Blue button color */
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
