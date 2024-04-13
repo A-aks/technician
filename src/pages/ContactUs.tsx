@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { FaPhone, FaEnvelope, FaUser, FaLaptop, FaPencilAlt, FaEnvelopeOpenText, FaTrash } from 'react-icons/fa';
 import '../App.css';
 
 interface FormData {
@@ -40,7 +41,7 @@ const TechnicianContactUs: React.FC = () => {
           },
           body: JSON.stringify(formData)
         });
-
+  
         if (response.ok) {
           console.log('Form submitted successfully!');
           alert('Form submitted successfully!');
@@ -57,6 +58,7 @@ const TechnicianContactUs: React.FC = () => {
       alert('An error occurred while submitting the form. Please try again later.');
     }
   };
+  
 
   const handleClearForm = () => {
     setFormData(initialFormData); 
@@ -64,14 +66,20 @@ const TechnicianContactUs: React.FC = () => {
 
   return (
     <div className="bg-light py-5">
-      <Container fluid style={{ backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '10px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)' }}>
+      <Container fluid className="px-0">
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={8} className="my-3">
             <div className="custom-form-container p-5" style={{ backgroundColor: '#ffffff', borderRadius: '8px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)' }}>
-              <h2 className="text-center mb-4 custom-header" style={{ color: '#333', fontWeight: 'bold' }}>Contact Us</h2>
+              <h2 className="text-center mb-4 custom-header" style={{ color: '#333', fontWeight: 'bold' }}>
+              &#x260E; {/* Phone Icon */}
+                Contact Us
+              </h2>
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicName">
-                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Your Name</Form.Label>
+                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
+                    <FaUser /> {/* User Icon */}
+                    Name
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter your name"
@@ -85,7 +93,10 @@ const TechnicianContactUs: React.FC = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
-                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Your Email</Form.Label>
+                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
+                    <FaEnvelope /> {/* Envelope Icon */}
+                    Email
+                  </Form.Label>
                   <Form.Control
                     type="email"
                     placeholder="Enter your email"
@@ -99,7 +110,10 @@ const TechnicianContactUs: React.FC = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPhone">
-                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Your Phone Number</Form.Label>
+                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
+                  &#x260E; {/* Phone Icon */}
+                    Phone Number
+                  </Form.Label>
                   <Form.Control
                     type="tel"
                     placeholder="Enter your phone number"
@@ -113,7 +127,10 @@ const TechnicianContactUs: React.FC = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicService">
-                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Service Required</Form.Label>
+                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
+                    <FaLaptop /> {/* Computer Icon */}
+                    Service Required
+                  </Form.Label>
                   <Form.Control
                     as="select"
                     className="custom-select"
@@ -132,7 +149,10 @@ const TechnicianContactUs: React.FC = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicMessage">
-                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Additional Details</Form.Label>
+                  <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
+                    <FaPencilAlt /> {/* Pen Icon */}
+                    Additional Details
+                  </Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
@@ -147,9 +167,11 @@ const TechnicianContactUs: React.FC = () => {
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className="btn-block custom-btn mt-3" style={{ backgroundColor: '#007bff', border: 'none', borderRadius: '6px', boxShadow: 'none', fontWeight: 'bold', fontSize: '18px' }}>
-                  Submit
+                  <FaEnvelopeOpenText /> {/* Envelope Icon */}
+                  Send 
                 </Button>
                 <Button variant="light" className="btn-block custom-btn mt-3 mx-2" onClick={handleClearForm} style={{ backgroundColor: '#e9ecef', border: 'none', borderRadius: '6px', boxShadow: 'none', fontWeight: 'bold', fontSize: '18px' }}>
+                  <FaTrash /> {/* Trash Icon */}
                   Clear Form
                 </Button>
               </Form>
