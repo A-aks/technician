@@ -18,7 +18,6 @@ function App() {
           <Route path='/bookService' element={<BookService/>} />
           <Route path='/contact-us' element={<ContactUs/>} />
           <Route path='/technician' element={<Technician/>} />
-         
         </Routes>
     </Router>
   );
