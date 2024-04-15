@@ -68,9 +68,9 @@ export default function Technician() {
           <p className="card-text" style={{ marginBottom: "3px" }}>
             <strong>Location :</strong> {technician.location}
           </p>
-          <p className="card-text">
+          {/* <p className="card-text">
             <strong>Contact :</strong> {technician.contact}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
