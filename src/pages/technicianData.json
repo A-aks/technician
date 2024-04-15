@@ -5,8 +5,9 @@
         "id": 1,
         "name": "Ashutosh Tiwari",
         "specialization": "Refrigerator",
-        "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 ",
-        "location": "Rewa"
+        "image": "https://t3.ftcdn.net/jpg/02/26/26/42/240_F_226264236_fGRdavot60i4IoRMQ6zA5PSl5lFbctS8.jpg ",
+        "location": "Rewa",
+        "contact":"9837883388"
       
       },
       {
@@ -14,21 +15,24 @@
         "name": "Arvind Soni",
         "specialization": "AC",
         "image": "https://media.istockphoto.com/id/1176772006/photo/portrait-of-man-looking-at-camera-over-white-background.jpg?s=612x612&w=0&k=20&c=hhlfr_8TgalVqSMprxcXHKhCnqixB3sxKDUXnr7IfT8=",
-        "location": "Satna"
+        "location": "Satna",
+        "contact":"9837883388"
       },
       {
         "id": 3,
         "name": "Pankaj Kewat",
         "specialization": "AC",
         "image": "https://t4.ftcdn.net/jpg/03/78/43/25/360_F_378432516_6IlKiCLDAqSCGcfc6o8VqWhND51XqfFm.jpg",
-        "location": "Satna"
+        "location": "Satna",
+        "contact":"9837883388"
       },
       {
         "id": 4,
         "name": "Aman Singh",
         "specialization": "AC",
         "image": "https://png.pngtree.com/png-vector/20230928/ourmid/pngtree-young-indian-man-png-image_10149662.png",
-        "location": "Rewa"
+        "location": "Rewa",
+        "contact":"9837883388"
       }
     ]
   }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import technicianData from './technicianData.json';
+import '../App.css';
+
 
 export default function Technician() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -22,7 +24,7 @@ export default function Technician() {
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-4 text-center">Technicians</h1>
+      <h1 className="mb-4 text-center" >Technicians</h1>
       <div className="row mb-4 justify-content-center">
         <div className="col-md-8 d-flex gap-2">
           <select
@@ -46,10 +48,10 @@ export default function Technician() {
           </select>
         </div>
       </div>
-      <div className="row">
+      <div className="row  justify-content-center">
   {filteredTechnicians.map((technician) => (
-    <div key={technician.id} className="col-md-4 mb-2">
-      <div className="card d-flex flex-row">
+    <div key={technician.id} className="col-md-5 mb-2">
+      <div className="card d-flex flex-row  h-100 ">
         <div className="card-img-left" style={{ width: "35%", height: "auto" }}>
           <img
             src={technician.image}
@@ -58,20 +60,23 @@ export default function Technician() {
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </div>
-        <div className="card-body" style={{ width: "65%" }}>
+        <div className="card-body" style={{ width: "65%",  maxHeight: "130px"}}>
           <h5 className="card-title">{technician.name}</h5>
           <p className="card-text" style={{ marginBottom: "3px" }}>
             <strong>Specialization :</strong> {technician.specialization}
           </p>
-          <p className="card-text">
+          <p className="card-text" style={{ marginBottom: "3px" }}>
             <strong>Location :</strong> {technician.location}
           </p>
-          
+          <p className="card-text">
+            <strong>Contact :</strong> {technician.contact}
+          </p>
         </div>
       </div>
     </div>
   ))}
 </div>
+
 
     </div>
   );
