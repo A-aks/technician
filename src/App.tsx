@@ -9,6 +9,8 @@ import ContactUs from './pages/ContactUs';
 import BookService from './pages/BookService';
 import Technician from './pages/Technician';
 import AcRepairs from './pages/Repairs/AcRepairs';
+import Login from './pages/Login';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/technician' element={<Technician />} />
         <Route path='/ac-repair' element={<AcRepairs />} />
+        <Route path='/Login' element={<Login />} />
       </Routes>
     </Router>
   );

@@ -81,8 +81,9 @@ const NavBar: React.FC = () => {
                                             Separated link
                                         </NavDropdown.Item>
                                     </NavDropdown>
-
+                                    <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/Login'} > Account</Nav.Link>
                                 </Nav>
+                                
                                 <Nav className="justify-content-end flex-grow-1 pe-3 mt-2">
                                     <div className='d-block d-sm-none'>
                                         <hr />
