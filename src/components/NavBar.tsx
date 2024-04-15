@@ -14,6 +14,7 @@ import { Envelope, Facebook, Instagram, TwitterX, Whatsapp, X, Youtube } from 'r
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaYoutube, FaSquareInstagram, FaSquareXTwitter, FaSquareWhatsapp } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
+import logo from '../assets/Logo1.jpg'
 
 
 
@@ -45,7 +46,7 @@ const NavBar: React.FC = () => {
             {['sm'].map((expand) => (
                 <Navbar expand={expand} className="bg-body-tertiary mb-1 fixed-top card m-1" sticky='top'>
                     <Container className='rounded' style={{background:'#f8f8f8'}} fluid>
-                        <Image src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'} />
+                        <Image src={logo} height={50} />
                         <Navbar.Brand href="#" className='ms-2 '>
                             <div className='flex flex-column m-0 p-0'><p className='p-0 m-0'>Technicianwale</p></div>
                         </Navbar.Brand>
