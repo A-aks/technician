@@ -69,15 +69,15 @@ const TechnicianContactUs: React.FC = () => {
       <Container fluid className="px-0">
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={8} className="my-3">
-            <div className="custom-form-container p-5" style={{ backgroundColor: '#ffffff', borderRadius: '8px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)' }}>
+            <div className="custom-form-container p-5" style={{ backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)' }}>
               <h2 className="text-center mb-4 custom-header" style={{ color: '#333', fontWeight: 'bold' }}>
-              &#x260E; {/* Phone Icon */}
+                <FaPhone style={{ color: '#FFA500' }} /> {/* Phone Icon */}
                 Contact Us
               </h2>
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicName">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
-                    <FaUser /> {/* User Icon */}
+                    <FaUser style={{ color: '#FFA500' }} /> {/* User Icon */}
                     Name
                   </Form.Label>
                   <Form.Control
@@ -94,7 +94,7 @@ const TechnicianContactUs: React.FC = () => {
 
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
-                    <FaEnvelope /> {/* Envelope Icon */}
+                    <FaEnvelope style={{ color: '#FFA500' }} /> {/* Envelope Icon */}
                     Email
                   </Form.Label>
                   <Form.Control
@@ -111,7 +111,7 @@ const TechnicianContactUs: React.FC = () => {
 
                 <Form.Group controlId="formBasicPhone">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
-                  &#x260E; {/* Phone Icon */}
+                    <FaPhone style={{ color: '#FFA500' }} /> {/* Phone Icon */}
                     Phone Number
                   </Form.Label>
                   <Form.Control
@@ -128,7 +128,7 @@ const TechnicianContactUs: React.FC = () => {
 
                 <Form.Group controlId="formBasicService">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
-                    <FaLaptop /> {/* Computer Icon */}
+                    <FaLaptop style={{ color: '#FFA500' }} /> {/* Computer Icon */}
                     Service Required
                   </Form.Label>
                   <Form.Control
@@ -150,7 +150,7 @@ const TechnicianContactUs: React.FC = () => {
 
                 <Form.Group controlId="formBasicMessage">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
-                    <FaPencilAlt /> {/* Pen Icon */}
+                    <FaPencilAlt style={{ color: '#FFA500' }} /> {/* Pen Icon */}
                     Additional Details
                   </Form.Label>
                   <Form.Control
@@ -166,12 +166,12 @@ const TechnicianContactUs: React.FC = () => {
                   />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="btn-block custom-btn mt-3" style={{ backgroundColor: '#007bff', border: 'none', borderRadius: '6px', boxShadow: 'none', fontWeight: 'bold', fontSize: '18px' }}>
-                  <FaEnvelopeOpenText /> {/* Envelope Icon */}
+                <Button variant="primary" type="submit" className="btn-block custom-btn mt-3" style={{ backgroundColor: '#FFA500', border: 'none', borderRadius: '6px', boxShadow: 'none', fontWeight: 'bold', fontSize: '18px' }}>
+                  <FaEnvelopeOpenText style={{ color: '#FFF' }} /> {/* Envelope Icon */}
                   Send 
                 </Button>
-                <Button variant="light" className="btn-block custom-btn mt-3 mx-2" onClick={handleClearForm} style={{ backgroundColor: '#e9ecef', border: 'none', borderRadius: '6px', boxShadow: 'none', fontWeight: 'bold', fontSize: '18px' }}>
-                  <FaTrash /> {/* Trash Icon */}
+                <Button variant="light" className="btn-block custom-btn mt-3 mx-2" onClick={handleClearForm} style={{ backgroundColor: '#FFA500', border: 'none', borderRadius: '6px', boxShadow: 'none', fontWeight: 'bold', fontSize: '18px' }}>
+                  <FaTrash style={{ color: '#FFF' }} /> {/* Trash Icon */}
                   Clear Form
                 </Button>
               </Form>
