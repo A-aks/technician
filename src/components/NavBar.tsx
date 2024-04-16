@@ -24,7 +24,7 @@ const NavBar: React.FC = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
+
     const handleHomeClick = () => {
         handleClose();
         if (window.location.pathname !== "/") {
@@ -44,7 +44,7 @@ const NavBar: React.FC = () => {
         <>
             {['sm'].map((expand) => (
                 <Navbar expand={expand} className="bg-body-tertiary mb-1 fixed-top card m-1" sticky='top'>
-                    <Container className='rounded' style={{background:'#f8f8f8'}} fluid>
+                    <Container className='rounded' style={{ background: '#f8f8f8' }} fluid>
                         <Image src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'} />
                         <Navbar.Brand href="#" className='ms-2 '>
                             <div className='flex flex-column m-0 p-0'><p className='p-0 m-0'>Technicianwale</p></div>
@@ -71,6 +71,7 @@ const NavBar: React.FC = () => {
                                     <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black font-weight-bold mt-1 md:mt-0'>Contact us</Nav.Link>
                                     <NavDropdown className='text-start btn custom-btn-primary p-0 ps-1  rounded-md text-black font-weight-bold mt-1 md:mt-0' title="Services" id="basic-nav-dropdown">
                                         <NavDropdown.Item href="/ac-repair">AC Repairing</NavDropdown.Item>
+                                        <NavDropdown.Item href="/refrigrator-repair">Refrigrator Repairing</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">
                                             Another action
                                         </NavDropdown.Item>
