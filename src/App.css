@@ -77,3 +77,43 @@
 .custom-btn:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
+.btn-light-orange {
+  color: #fff;
+  background-color: orangered; /* Light orange color */
+  border-color: #ffa500; /* Light orange color */
+}
+
+.btn-light-orange:hover {
+  color: #fff;
+  background-color: #ff7f00; /* Slightly darker shade of orange on hover */
+  border-color: #ff7f00; /* Slightly darker shade of orange on hover */
+}
+
+.btn-light-orange:focus, .btn-light-orange.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.5); /* Focus shadow color for accessibility */
+}
+.light-orange {
+  color: #fff;
+  background-color: black; /* Light orange color */
+  border-color: #ffcc80; /* Light orange color */
+}
+
+.light-orange:hover {
+  background-color: #ffb74d; /* Slightly darker shade of orange on hover */
+  border-color: #ffb74d; /* Slightly darker shade of orange on hover */
+}
+
+.card-3d {
+  border-radius: 10px; /* Adjust the border radius to control the curvature of the card */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
+  padding: 20px; /* Add padding to create space between content and card edges */
+}
+
+.card-3d:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); /* Increase the box shadow on hover for a more pronounced 3D effect */
+}
+/* CSS file */
+.container-custom {
+  background-color: orange;
+}
+
