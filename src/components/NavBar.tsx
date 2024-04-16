@@ -69,6 +69,7 @@ const NavBar: React.FC = () => {
                                     <Nav.Link onClick={handleHomeClick} className=' text-start btn custom-btn-primary px-2  rounded-md text-black fw-5 mt-1 md:mt-0'>Home</Nav.Link>
                                     <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/BookService'} >Book New Service</Nav.Link>
                                     <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/technician'} > Technician</Nav.Link>
+                                    <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/technicianPage'} > TechnicianPage</Nav.Link>
                                     <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black font-weight-bold mt-1 md:mt-0'>Contact us</Nav.Link>
                                     <NavDropdown className='text-start btn custom-btn-primary p-0 ps-1  rounded-md text-black font-weight-bold mt-1 md:mt-0' title="Services" id="basic-nav-dropdown">
                                         <NavDropdown.Item href="/ac-repair">AC Repairing</NavDropdown.Item>

@@ -88,7 +88,7 @@ const BookService: React.FC = () => {
             <div
               className="custom-form-container p-5"
               style={{
-                backgroundColor: "#ffc107",
+                backgroundColor: "",
                 borderRadius: "8px",
                 boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
               }}
@@ -347,7 +347,6 @@ const BookService: React.FC = () => {
             </div>
           </Col>
         </Row>
-    /
     </div>
   );
 };
