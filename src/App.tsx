@@ -10,7 +10,9 @@ import BookService from './pages/BookService';
 import Technician from './pages/Technician';
 import AcRepairs from './pages/Repairs/AcRepairs';
 import Login from './pages/Login';
-
+import RefrigratorRepairs from './pages/Repairs/RefrigratorRepairs'
+import Footer from './components/Footer'
+import TechnicianPage from './pages/TechnicianPage'
 
 function App() {
   return (
