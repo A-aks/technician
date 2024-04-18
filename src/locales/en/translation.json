@@ -1,0 +1,14 @@
+{
+    "technicians": {
+        "technicians":"Technicians",
+      "allSpecializations": "All Specializations",
+      "refrigerator": "Refrigerator",
+      "ac": "AC",
+      "allLocations": "All Locations",
+      "rewa": "Rewa",
+      "satna": "Satna",
+      "location":"Location",
+      "specialization":"Specialization"
+    }
+  }
+  

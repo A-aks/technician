@@ -127,3 +127,13 @@
   box-shadow: 0 0 0 0.2rem rgba(219, 168, 0, 0.25) !important;
 }
 
+.language-dropdown select {
+  border-radius: 20px;
+  padding: 3px 10px;
+  box-shadow: none;
+  transition: box-shadow 0.1s;
+}
+
+.language-dropdown select:hover {
+  box-shadow: 0 0 8px orange;
+}

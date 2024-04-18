@@ -14,8 +14,12 @@ import RefrigratorRepairs from './pages/Repairs/RefrigratorRepairs'
 import Footer from './components/Footer'
 import TechnicianPage from './pages/TechnicianPage';
 import Admin from './pages/Admin';
+import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
+import i18n from './i18n'; // Import i18n configuration
+
 function App() {
   return (
+    <I18nextProvider i18n={i18n}>
     <Router>
       <NavBar />
       <Routes>
@@ -32,6 +36,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </I18nextProvider>
   );
 }
 
