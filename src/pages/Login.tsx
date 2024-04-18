@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Image } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; 
 import '../App.css';
@@ -13,36 +13,24 @@ const Login: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
-
-        try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ phoneNumber, password }),
-            });
-
-            if (!response.ok) {
-                throw new Error('Invalid credentials');
-            }
-
-            if (phoneNumber === 'technician') {
-                navigate('/TechnicianPage');
-            } else if (phoneNumber === 'admin') {
-                navigate('/Admin');
+        setTimeout(() => {
+            if (phoneNumber === '7509291446' && password === '123') {
+                navigate('/TechPage');
+            } else if (phoneNumber === '9685988504' && password === '456') {
+                navigate('/admin');
             } else {
-                throw new Error('Invalid user role');
+                setError('Invalid phone number or password');
+                setTimeout(() => {
+                    setError(''); // Clear error after 3 seconds
+                }, 3000);
             }
-        } catch (error) {
-            setError('Invalid credentials');
-        } finally {
             setLoading(false);
-        }
+        }, 3000);
     };
+    
 
     return (
-        <Container className=' card-3d mt-3 mb-3 ' style={{ width: '100%', maxWidth: '60%', backgroundColor: 'orange' }}>
+        <Container className='card-3d mt-3 mb-3' style={{ width: '100%', maxWidth: '60%' }}>
             <Row className="justify-content-center mb-4">
                 <Col xs={6} md={3} className="text-center">
                     <Image src="https://transcendglobalservices.com/wp-content/uploads/2021/04/WhatsApp-Image-2022-07-18-at-4.19.28-PM-copy.png" alt="User Logo" fluid />
