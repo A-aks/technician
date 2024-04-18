@@ -3,7 +3,7 @@ import { Form, Button, Container, Row, Col, Image } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; 
 import '../App.css';
 
-const LoginForm: React.FC = () => {
+const Login: React.FC = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -74,4 +74,4 @@ const LoginForm: React.FC = () => {
     );
 };
 
-export default LoginForm;
+export default Login;
