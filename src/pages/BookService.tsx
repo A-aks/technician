@@ -94,6 +94,7 @@ const BookService: React.FC = () => {
                       <Form.Control
                         type="text"
                         name="name"
+                        placeholder="Enter Full Name"
                         className="custom-input"
                         value={formData.name}
                         onChange={handleChange}
@@ -121,6 +122,7 @@ const BookService: React.FC = () => {
                       <Form.Control
                         type="tel"
                         name="phone"
+                        placeholder="Enter Phone No.."
                         className="custom-input"
                         value={formData.phone}
                         onChange={handleChange}
@@ -147,6 +149,7 @@ const BookService: React.FC = () => {
                       <Form.Control
                         type="text"
                         name="address"
+                        placeholder="Enter Address"
                         className="custom-input"
                         value={formData.address}
                         onChange={handleChange}
@@ -199,6 +202,7 @@ const BookService: React.FC = () => {
                       <Form.Control
                         as="textarea"
                         rows={3}
+                        placeholder="Issues or Services"
                         name="issueDescription"
                         className="custom-input"
                         value={formData.issueDescription}
