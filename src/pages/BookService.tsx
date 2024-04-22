@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { FaCalendarCheck, FaEnvelope, FaUser, FaLaptop, FaPencilAlt , FaClock , FaCalendarAlt,FaMapMarkerAlt , FaMapPin } from 'react-icons/fa';
+import { FaCalendarCheck, FaEnvelope, FaUser,FaPhone ,FaLaptop, FaPencilAlt, FaClock, FaCalendarAlt, FaMapMarkerAlt, FaMapPin } from 'react-icons/fa';
 
 interface FormData {
   name: string;
@@ -59,271 +59,192 @@ const BookService: React.FC = () => {
     });
   };
 
-  const handleAdditionalServicesChange = (service: string) => {
-    const currentIndex = formData.additionalServices.indexOf(service);
-    const newCheckedServices = [...formData.additionalServices];
-
-    if (currentIndex === -1) {
-      newCheckedServices.push(service);
-    } else {
-      newCheckedServices.splice(currentIndex, 1);
-    }
-
-    setFormData({
-      ...formData,
-      additionalServices: newCheckedServices,
-    });
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     setFormData(initialFormData);
   };
+
   return (
-    <div className="bg-light py-5">
-      
+    <div className="complain-bg my-4 ">
+      <Container className="">
         <Row className="justify-content-center">
-          <Col xs={12} md={10} lg={8} className="my-3">
-            <div
-              className="custom-form-container p-5"
-              style={{
-                backgroundColor: "",
-                borderRadius: "8px",
-                boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
-              }}
-            >
+          <Col xs={12} md={10} lg={12} className="my-3">
+            <div className="container  p-3 "
+              style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
               <h2
                 className="text-center mb-4 custom-header"
                 style={{ color: "#333", fontWeight: "bold" }}
-              > <FaCalendarCheck />
+              >
+                <FaCalendarCheck />
                 EffortlessBookings
               </h2>
 
               <Form onSubmit={handleSubmit}>
-                
-                <Form.Group controlId="formName">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}>
-                      <FaUser />
-                    Full Name
-                  </Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
+                <Row>
+                  <Col xs={12} md={6}>
+                    <Form.Group controlId="formName">
+                      <Form.Label
+                        className="custom-label"
+                        style={{ color: "#333", fontWeight: "bold" }}
+                      >
+                        <FaUser />
+                        Full Name
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="name"
+                        placeholder="Enter Full Name"
+                        className="custom-input"
+                        value={formData.name}
+                        onChange={handleChange}
+                        style={{
+                          border: "2px solid #ccc",
+                          borderRadius: "4px",
+                          boxShadow: "none",
+                        }}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
 
-                <Form.Group controlId="formEmail">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  ><FaEnvelope />
-                    {" "}
-                    Email
-                  </Form.Label>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
 
-                <Form.Group controlId="formPhone">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  > &#x260E;
-                    {" "}
-                    Phone Number
-                  </Form.Label>
-                  <Form.Control
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formAddress">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  > <FaMapMarkerAlt />
-                    {" "}
-                    Address
-                  </Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formBasicService">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  ><FaLaptop />
-                    {" "}
-                    Service Required
-                  </Form.Label>
-                  <Form.Control
-                    as="select"
-                    className="custom-select"
-                    name="service"
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  >
-                    <option value="">Choose...</option>
-                    <option value="AC">AC</option>
-                    <option value="Refrigerator">Refrigerator</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="formIssueDescription">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  ><FaPencilAlt />
-                    Description of the Issue or Service Required
-                  </Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={4}
-                    name="issueDescription"
-                    value={formData.issueDescription}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formPreferredDate">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  > <FaCalendarAlt />
-                    Preferred Date
-                  </Form.Label>
-                  <Form.Control
-                    type="date"
-                    name="preferredDate"
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formPreferredTime">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  > <FaClock />
-                    Preferred Time
-                  </Form.Label>
-                  <Form.Control
-                    type="time"
-                    name="preferredTime"
-                    value={formData.preferredTime}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formServiceLocation">
-                  <Form.Label
-                    className="custom-label"
-                    style={{ color: "#333", fontWeight: "bold" }}
-                  > <FaMapPin />
-                    Service Location
-                  </Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="serviceLocation"
-                    value={formData.serviceLocation}
-                    onChange={handleChange}
-                    style={{
-                      border: "2px solid #ccc",
-                      borderRadius: "4px",
-                      boxShadow: "none",
-                    }}
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formAgreeTerms">
-                  <div style={{ marginTop: "10px" }}>
-                    <Form.Check
-                      type="checkbox"
-                      label="I agree to the terms and conditions"
-                      name="agreeTerms"
-                      checked={formData.agreeTerms}
-                      onChange={handleCheckboxChange}
+                  <Col xs={12} md={6}>
+                    <Form.Group controlId="formPhone">
+                      <Form.Label
+                        className="custom-label"
+                        style={{ color: "#333", fontWeight: "bold" }}
+                      >
+                          <FaPhone style={{ color: "black", marginRight:"3px" }} />
                       
-                      required
-                    />
-                  </div>
-                </Form.Group>
+                        Phone Number
+                      </Form.Label>
+                      <Form.Control
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter Phone No.."
+                        className="custom-input"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        style={{
+                          border: "2px solid #ccc",
+                          borderRadius: "4px",
+                          boxShadow: "none",
+                        }}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
 
+                  <Col xs={12} md={6}>
+                    <Form.Group controlId="formAddress">
+                      <Form.Label
+                        className="custom-label my-2"
+                        style={{ color: "#333", fontWeight: "bold" }}
+                      >
+                        <FaMapMarkerAlt />
+                        {" "}
+                        Address
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="address"
+                        placeholder="Enter Address"
+                        className="custom-input"
+                        value={formData.address}
+                        onChange={handleChange}
+                        style={{
+                          border: "2px solid #ccc",
+                          borderRadius: "4px",
+                          boxShadow: "none",
+                        }}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+
+                  <Col xs={12} md={6}>
+                    <Form.Group controlId="formBasicService">
+                      <Form.Label
+                        className="custom-label my-2"
+                        style={{ color: "#333", fontWeight: "bold" }}
+                      ><FaLaptop />
+                        {" "}
+                        Service Required
+                      </Form.Label>
+                      <Form.Control
+                        as="select"
+                        className="custom-select custom-input"
+                        name="service"
+                        onChange={handleChange}
+                        style={{
+                          border: "2px solid #ccc",
+                          borderRadius: "4px",
+                          boxShadow: "none",
+                        }}
+                        required
+                      >
+                        <option value="">Choose...</option>
+                        <option value="AC">AC</option>
+                        <option value="Refrigerator">Refrigerator</option>
+                      </Form.Control>
+                    </Form.Group>
+                  </Col>
+
+                  <Col xs={12} md={6}>
+                    <Form.Group controlId="formIssueDescription">
+                      <Form.Label
+                        className="custom-label my-2"
+                        style={{ color: "#333", fontWeight: "bold" }}
+                      ><FaPencilAlt />
+                        Description of the Issue or Service Required
+                      </Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        placeholder="Issues or Services"
+                        name="issueDescription"
+                        className="custom-input"
+                        value={formData.issueDescription}
+                        onChange={handleChange}
+                        style={{
+                          border: "2px solid #ccc",
+                          borderRadius: "4px",
+                          boxShadow: "none",
+                        }}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Col xs={12} md={6}>
+                  <Form.Group controlId="formAgreeTerms">
+                    <div style={{ marginTop: "10px" }}>
+                      <Form.Check
+                        type="checkbox"
+                        className="custom-checkbox"
+                        label="I agree to the terms and conditions"
+                        name="agreeTerms"
+                        checked={formData.agreeTerms}
+                        onChange={handleCheckboxChange}
+                        required
+                      />
+                    </div>
+                  </Form.Group>
+                </Col>
                 <Button
                   variant="primary"
                   type="submit"
                   className="btn-block mt-3"
                   style={{
-                    backgroundColor: "#007bff",
+                    backgroundColor: "#FFA500",
                     border: "none",
                     borderRadius: "6px",
                     boxShadow: "none",
                     fontWeight: "bold",
                     fontSize: "18px",
+
                   }}
                 >
                   Submit
@@ -347,6 +268,7 @@ const BookService: React.FC = () => {
             </div>
           </Col>
         </Row>
+      </Container>
     </div>
   );
 };
