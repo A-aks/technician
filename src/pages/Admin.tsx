@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './Admin.css'; // Import custom CSS if needed
+import Modal from 'react-bootstrap/Modal';
+import { Button } from 'react-bootstrap'; // Import Button component from react-bootstrap
+import technicianData from './technicianData.json';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Card from 'react-bootstrap/Card';
+
+interface Technician {
+  id: number;
+  name: string;
+  specialization: { en: string; hi: string };
+  image: string;
+  location: { en: string; hi: string };
+  contact: string;
+}
 
 function Admin() {
   const [activeTab, setActiveTab] = React.useState("All Complaints");
@@ -139,6 +153,15 @@ function Admin() {
     }
   ]
 
+  const technicians: Technician[] = technicianData.technicians;
+
+  const [search, setSearch] = useState<string>("");
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div>
       <div className="profile d-flex justify-content-center align-items-center">
@@ -230,7 +253,7 @@ function Admin() {
                   <th scope="col">Created by</th>
                   <th scope="col">Status</th>
                   <th scope="col">Query</th>
-                  <th scope="col">Technician</th>
+                  <th scope="col">Add Tecnician</th>
                 </tr>
               </thead>
               <tbody>
@@ -242,7 +265,7 @@ function Admin() {
                         <td>{complaint.created_by}</td>
                         <td>{complaint.status}</td>
                         <td>{complaint.query}</td>
-                        <td>{complaint.technicianName.length > 1 ? complaint.technicianName : "Not aquired"}</td>
+                        <td><Button onClick={handleShow} variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Add technician</Button></td>
                       </tr>
                     )
                   })
@@ -306,6 +329,54 @@ function Admin() {
               </tbody>
             </table>
           </div>
+
+          {/* Technician Add Modal */}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Add Technicians from list below...</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className='d-flex flex-column'>
+              <input value={search} onChange={(e) => { setSearch(e.target.value) }} type="search" name="technician_search" id="" />
+
+              <div>
+                {
+                  search.length > 0 ? (
+                    <Card style={{ width: '100%', overflowY: "scroll", height: "50vh" }} className='mt-3'>
+                      <ListGroup variant="flush">
+                        {
+                          technicianData.technicians.filter((technician) => technician.name.toLowerCase().includes(search.toLowerCase())).map((technician, index) => {
+                            return (
+                              <ListGroup.Item style={{ cursor: "pointer" }} key={index} className='list_technician d-flex justify-content-between align-items-center cursor-pointer'>
+                                <div className=''>
+                                  <h4>{technician.name}</h4>
+                                  <p>{technician.specialization.en} Technician</p>
+                                </div>
+                                <div>
+                                  <p>{technician.location.en}</p>
+                                  <button style={{ backgroundColor: "#DBA800", border: "black", color: "white" }} className="btn btn-technician" onClick={() => { alert("Technician added") }}>Add</button>
+                                </div>
+                              </ListGroup.Item>
+                            )
+                          })
+                        }
+                      </ListGroup>
+                    </Card>
+                  ) :
+                    (
+                      <>No data Found</>
+                    )
+                }
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button style={{ backgroundColor: "#DBA800", border: "none", color: "white" }} variant="primary" onClick={handleClose}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
     </div>
