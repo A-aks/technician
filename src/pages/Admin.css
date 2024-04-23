@@ -336,3 +336,9 @@
 .btn-technician {
     border: 2px solid black;
 }
+
+.add-foucs:focus {
+    border-color: #DBA800;
+    /* Change border color to gold when in focus */
+    box-shadow: 0 0 5px rgba(219, 168, 0, 0.5);
+}
