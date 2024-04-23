@@ -10,6 +10,23 @@
       "location":"स्थान",
       "specialization":" विशेषज्ञताएँ"
 
-    }
+    },
+
+    "Navbar":{
+              "Technicianwale": "टेक्नीशियनवाले",
+              "Home": "होम",
+              "Service at your doorstep":"आपके द्वार पर सेवा",
+              "Complain": "कंप्लेन",
+              "Technician": "टेक्नीशियन",
+              "TechnicianPage": "टेक्नीशियन पेज",
+              "Contact us": "संपर्क करें",
+              "Services": "सर्विसेस",
+              "AC Repairing": "एसी रिपेयरिंग",
+              "Refrigrator Repairing": "रेफ्रिजरेटर रिपेयरिंग",
+              "Account": "एकाउंट",
+              "Follow and Subscribe":"फॉलो एंड सब्सक्राइब",
+              "Contact & Email":"कॉन्टेक्ट एंड इमेल"
+ 
+}
   }
   

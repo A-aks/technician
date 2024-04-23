@@ -9,6 +9,24 @@
       "satna": "Satna",
       "location":"Location",
       "specialization":"Specialization"
-    }
+    },
+
+    "Navbar":{
+      "Technicianwale": "Technicianwale",
+      "Home": "Home",
+      "Service at your doorstep":"Service at your doorstep",
+      "Complain": "Complain",
+      "Technician": "Technician",
+      "TechnicianPage": "TechnicianPage",
+      "Contact us": "Contact us",
+      "Services": "Services",
+      "AC Repairing": "AC Repairing",
+      "Refrigrator Repairing": "Refrigrator Repairing",
+      "Account": "Account",
+      "Follow and Subscribe":"Follow and Subscribe",
+      "Contact & Email":"Contact & Email"
+
+  }
+  
   }
   

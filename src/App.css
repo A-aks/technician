@@ -139,6 +139,45 @@
   box-shadow: 0 0 8px orange;
 }
 
+/* Navbar */
+
+.nav-heading {
+  text-align: start;
+  padding-left: 0.1rem; 
+  padding-right: 0.1rem;
+  border-radius: 0.375rem; 
+  color: #000; 
+  margin-top: 0.25rem; 
+}
+.nav-heading:hover{
+  background-color: #ffc107; 
+  /* color: white !important; */
+}
+
+.orange-button {
+  color: black !important;
+  border-color: black !important;
+}
 
 
+.orange-button:hover {
+  background-color: orange !important;
+  /* color: white !important; */
+  border-color: orange !important;
+}
 
+/* Services  */
+
+.custom-nav-item {
+  /* text-align: start; */
+  padding-left: 0.1rem; 
+  padding-right: 0.1rem;
+  border-radius: 0.375rem; 
+  color: #000; 
+  margin-top: 0.25rem;
+}
+
+.custom-nav-item:hover {
+  background-color: #ffc107 !important; 
+  color: black;
+}
