@@ -1,7 +1,11 @@
 import React from 'react'
 import { Image, Navbar } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+
+    const { t, i18n } = useTranslation();
+
     return (
         <div>
             <footer className="text-center">
@@ -68,8 +72,8 @@ function Footer() {
                 </div>
 
                 <div className="text-center p-3">
-                    © 2020 Copyright:
-                    <a className="text-body" href="https://mdbootstrap.com/">Technicianwala</a>
+                    © 2020 {t('Footer.Copyright')} : 
+                    <a className="text-body" href= "https://mdbootstrap.com/">{t('Footer.Technicianwale')}</a>
                 </div>
             </footer>
         </div>
