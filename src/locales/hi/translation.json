@@ -28,10 +28,26 @@
               "Contact & Email":"कॉन्टेक्ट एंड इमेल"
  
              },
+
      "Footer":{
-      "Copyright":"कॉपीराइट",
-      "Technicianwale":"टेक्नीशियनवाले"
-     }       
+              "Copyright":"कॉपीराइट",
+              "Technicianwale":"टेक्नीशियनवाले"
+              },
+              
+      "Home":{
+                "Home Services":"होम सर्विसेस",
+                "All services at your doorstep":"आपके द्वार पर सेवा",
+                "Technician's":"टेक्नीशियनस",
+                "Well Skilled, Certified & Experienced":"वेल स्किल्ड, सर्टिफाइड एंड एक्सपीरियंस",
+                "AC Services":"एसी सर्विसेस",
+                "Mounting, Unmounting, Repairing":"माउंटिंग,अनमाउंटिंग,रिपेयरिंग",
+                "Refrigerator":"रेफ्रिजरेटर",
+                "Repairing":"रिपेयरिंग",
+                "New Complain":"न्यू कंप्लेन",
+                "Search Technician":"सर्च टेक्नीशियन"        
            
   }
-  
+
+
+
+}

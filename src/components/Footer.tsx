@@ -71,7 +71,7 @@ function Footer() {
                     </section>
                 </div>
 
-                <div className="text-center p-3">
+                <div className="text-center p-3"  style={{ fontWeight: "700" }}>
                     © 2020 {t('Footer.Copyright')} : 
                     <a className="text-body" href= "https://mdbootstrap.com/">{t('Footer.Technicianwale')}</a>
                 </div>
