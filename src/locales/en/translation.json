@@ -9,6 +9,42 @@
       "satna": "Satna",
       "location":"Location",
       "specialization":"Specialization"
-    }
+    },
+
+    "Navbar":{
+              "Home": "Home",
+              "Technicianwale": "Technicianwale",
+              "Service at your doorstep":"Service at your doorstep",
+              "Complain": "Complain",
+              "Technician": "Technician",
+              "TechnicianPage": "TechnicianPage",
+              "Contact us": "Contact us",
+              "Services": "Services",
+              "AC Repairing": "AC Repairing",
+              "Refrigrator Repairing": "Refrigrator Repairing",
+              "Account": "Account",
+              "Follow and Subscribe":"Follow and Subscribe",
+              "Contact & Email":"Contact & Email"
+            },
+
+
+     "Footer":{
+            "Copyright":"Copyright",
+            "Technicianwale":"Technicianwale"
+            } ,      
+  
+      "Home":{
+            "Home Services":"Home Services",
+            "All services at your doorstep":"All services at your doorstep",
+            "Technician's":"Technician's",
+            "Well Skilled, Certified & Experienced":"Well Skilled, Certified & Experienced",
+            "AC Services":"AC Services",
+            "Mounting, Unmounting, Repairing":"Mounting, Unmounting, Repairing",
+            "Refrigerator":"Refrigerator",
+            "Repairing":"Repairing",
+            "New Complain":"New Complain",
+            "Search Technician":"Search Technician"
+           
+      }      
   }
   
