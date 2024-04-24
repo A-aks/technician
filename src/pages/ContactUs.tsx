@@ -65,16 +65,18 @@ const TechnicianContactUs: React.FC = () => {
   };
 
   return (
-    <div className="bg-light py-5">
-      <Container fluid className=" px-0">
+    <div className="complain-bg  my-4 ">
+      <Container>
         <Row className="justify-content-center">
-          <Col xs={12} md={10} lg={8} className="my-3">
-            <div className=" custom-form-container p-5" style={{ backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)' }}>
+          <Col xs={12} md={10} lg={12} className="my-3">
+            <div className=" custom-form-container p-3" style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
               <h2 className="text-center mb-4 custom-header" style={{ color: '#333', fontWeight: 'bold' }}>
               &#x1F4DE; {/* Phone Icon */}
                 Contact Us
               </h2>
               <Form onSubmit={handleSubmit}>
+              <Row>
+              <Col xs={12} md={6}>
                 <Form.Group controlId="formBasicName">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
                     <FaUser  /> {/* User Icon */}
@@ -91,7 +93,9 @@ const TechnicianContactUs: React.FC = () => {
                     required
                   />
                 </Form.Group>
+                </Col>
 
+                <Col xs={12} md={6}>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
                     <FaEnvelope /> {/* Envelope Icon */}
@@ -108,7 +112,9 @@ const TechnicianContactUs: React.FC = () => {
                     required
                   />
                 </Form.Group>
+                </Col>
 
+                <Col xs={12} md={6}>
                 <Form.Group controlId="formBasicPhone">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
                     <FaPhone />
@@ -125,7 +131,9 @@ const TechnicianContactUs: React.FC = () => {
                     required
                   />
                 </Form.Group>
+                </Col>
 
+                <Col xs={12} md={6}>
                 <Form.Group controlId="formBasicService">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
                     <FaLaptop  /> 
@@ -133,7 +141,7 @@ const TechnicianContactUs: React.FC = () => {
                   </Form.Label>
                   <Form.Control
                     as="select"
-                    className="custom-select"
+                    className="custom-input"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
@@ -147,7 +155,10 @@ const TechnicianContactUs: React.FC = () => {
                     <option value="Other">Other</option>
                   </Form.Control>
                 </Form.Group>
+                </Col>
 
+
+                <Col xs={12} md={6}>
                 <Form.Group controlId="formBasicMessage">
                   <Form.Label className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>
                     <FaPencilAlt  /> {/* Pen Icon */}
@@ -165,9 +176,11 @@ const TechnicianContactUs: React.FC = () => {
                     required
                   />
                 </Form.Group>
+                </Col>
+                </Row>
 
-                <Button variant="primary" type="submit" className='mt-3 mx-2' style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}> <FaEnvelopeOpenText  />Send</Button>
-                <Button variant="primary"className='mt-3' style={{ backgroundColor: "#DBA800", border: "none", color: "white" }} onClick={handleClearForm}> <FaTrash  /> Clear Form</Button>
+                <Button variant="primary" type="submit" className='mt-3 mx-2' style={{ backgroundColor: "#ffc107", border: "none", color: "black", fontWeight:"700" }}> <FaEnvelopeOpenText  className='mx-1'  />Send</Button>
+                <Button variant="primary"className='mt-3' style={{ backgroundColor: "#ffc107", border: "none", color: "black", fontWeight:"700" }} onClick={handleClearForm}> <FaTrash  /> Clear Form</Button>
               </Form>
             </div>
           </Col>
