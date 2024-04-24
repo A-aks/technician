@@ -18,7 +18,7 @@ import logo from '../assets/Logo1.jpg'
 
 
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ isLoggedIn, handleLogout }) => {
     const [show, setShow] = useState<Boolean>(false);
     const [adminData, setAdminData] = useState<any>({});
 
@@ -83,7 +83,11 @@ const NavBar: React.FC = () => {
                                             Separated link
                                         </NavDropdown.Item>
                                     </NavDropdown>
-                                    <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/Login'} > Account</Nav.Link>
+                                    {isLoggedIn ? (
+                                        <Nav.Link onClick={handleLogout} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0'as={Link} to={'/Login'} >Logout</Nav.Link>
+                                    ) : (
+                                        <Nav.Link as={Link} to={'/Login'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' > Account</Nav.Link>
+                                    )}
                                 </Nav>
 
                                 <Nav className="justify-content-end flex-grow-1 pe-3 mt-2">

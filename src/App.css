@@ -111,14 +111,14 @@
 }
 
 .card-3d:hover {
-  box-shadow: 0 0 30px orange; /* Increase the box shadow on hover for a more pronounced 3D effect */
+  box-shadow: 0 0 15px orange; /* Increase the box shadow on hover for a more pronounced 3D effect */
 }
-/* CSS file */
+
 .container-custom {
   background-color: orange;
 }
 .form-control:focus {
-  border-color: orange;
+  border-color:orange;
   box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
 }
 .custom-input:focus,
@@ -137,6 +137,10 @@
 
 .language-dropdown select:hover {
   box-shadow: 0 0 8px orange;
+}
+.input-focus-orange:focus,
+.input-focus-orange:active {
+  border-color: orange !important;
 }
 
 

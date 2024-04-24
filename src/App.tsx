@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Stack } from 'react-bootstrap';
@@ -18,10 +18,21 @@ import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
 import i18n from './i18n'; // Import i18n configuration
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    
+    setIsLoggedIn(false);
+  };
+
   return (
     <I18nextProvider i18n={i18n}>
     <Router>
-      <NavBar />
+      <NavBar  isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/bookService' element={<BookService />} />
@@ -29,7 +40,7 @@ function App() {
         <Route path='/technician' element={<Technician />} />
         <Route path='/technicianPage' element={<TechnicianPage/>} />
         <Route path='/ac-repair' element={<AcRepairs />} />
-        <Route path='/Login' element={<Login/>}/>
+        <Route path='/Login' element={<Login handleLogin={handleLogin} />}/>
         <Route path='/refrigrator-repair' element={<RefrigratorRepairs />} />
         <Route path='/TechPage' element={<TechnicianPage />} />
         <Route path='/admin' element={<Admin />} />
