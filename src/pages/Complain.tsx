@@ -190,7 +190,7 @@ const Complain: React.FC = () => {
                         required
                       >
                         <option value="">{t('Complain.Choose...')}</option>
-                        <option value="AC">AC</option>
+                        <option value="AC">{t('Complain.AC')}</option>
                         <option value="Refrigerator">{t('Complain.Refrigerator')}</option>
                       </Form.Control>
                     </Form.Group>
@@ -248,6 +248,7 @@ const Complain: React.FC = () => {
                     boxShadow: "none",
                     fontWeight: "bold",
                     fontSize: "18px",
+                    color:"black"
 
                   }}
                 >
@@ -258,7 +259,7 @@ const Complain: React.FC = () => {
                   className="btn-block mt-3 mx-2"
                   onClick={() => setFormData(initialFormData)}
                   style={{
-                    backgroundColor: "#e9ecef",
+                    backgroundColor: "#FFA500",
                     border: "none",
                     borderRadius: "6px",
                     boxShadow: "none",

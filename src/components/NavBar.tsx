@@ -28,14 +28,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleHomeClick = () => {
-        handleClose();
-        if (window.location.pathname !== "/") {
-            window.location.href = "/";
-        } else {
-            window.location.reload();
-        }
-    };
+   
 
     useEffect(() => {
 
@@ -77,8 +70,8 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                             <Offcanvas.Body className='p-1' >
                                 <Nav className="justify-content-start flex-grow-1 pe-3 gap-1" style={{ fontWeight: "700" }} >
                                     <p className='d-block d-sm-none bg-warning rounded text-center'>{t('Navbar.Service at your doorstep')}</p>
-                                    <Nav.Link onClick={handleHomeClick} className='nav-heading text-black mx-2' >{t('Navbar.Home')}</Nav.Link>
-                                    <Nav.Link onClick={handleClose} className='nav-heading text-black mx-2' as={Link} to={'/BookService'} >{t('Navbar.Complain')}</Nav.Link>
+                                    <Nav.Link onClick={handleClose} as={Link} to={'/'}  className='nav-heading text-black mx-2' >{t('Navbar.Home')}</Nav.Link>
+                                    <Nav.Link onClick={handleClose} className='nav-heading text-black mx-2' as={Link} to={'/complain'} >{t('Navbar.Complain')}</Nav.Link>
                                     <Nav.Link onClick={handleClose} className='nav-heading text-black mx-2' as={Link} to={'/technician'} > {t('Navbar.Technician')}</Nav.Link>
                                     {/* <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/technicianPage'} > {t('Navbar.TechnicianPage')}</Nav.Link> */}
                                     <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' nav-heading text-black mx-2'>{t('Navbar.Contact us')}</Nav.Link>
@@ -97,7 +90,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                     {isLoggedIn ? (
                                         <Nav.Link onClick={handleLogout} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/Login'} >Logout</Nav.Link>
                                     ) : (
-                                        <Nav.Link as={Link} to={'/Login'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' > Account</Nav.Link>
+                                        <Nav.Link as={Link} to={'/Login'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' >{t('Navbar.Account')}</Nav.Link>
                                     )}
                                 </Nav>
                                 <Button
