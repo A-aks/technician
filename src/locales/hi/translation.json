@@ -65,7 +65,25 @@
                 "Register":"रजिस्टर",
                 "Clear Complain":"क्लियर कंप्लेन"
 
-}
+},
+"Contact":{
+  "Contact Us":"संपर्क करें",
+  "Name":"नाम",
+  "Enter your Name":"पूरा नाम लिखे",
+  "Email":"ईमेल",
+  "Enter your email":"अपना ईमेल लिखे",
+  "Phone Number":"फोन नंबर",
+  "Enter phone number":"फोन नंबर लिखे",
+  "Service Required":"सेवा की आवश्यकता",
+  "Choose...":"सर्विस चुने...",
+  "AC Repair":"एसी रिपेयर",
+  "AC Installation":"एसी इंस्टालेशन",
+  "Refrigerator Repair":"रेफ्रिजरेटर रिपेयर",
+  "Other":"अन्य",
+  "Additional Details":"एडिशनल डिटेल्स",
+  "Send":"भेजे",
+  "Clear Form":"क्लियर करे"
+}  
 
 
 
