@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ContactUs from './pages/ContactUs';
-import BookService from './pages/BookService';
+import Complain from './pages/Complain';
 import Technician from './pages/Technician';
 import AcRepairs from './pages/Repairs/AcRepairs';
 import Login from './pages/Login';
@@ -35,7 +35,7 @@ function App() {
       <NavBar  isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/bookService' element={<BookService />} />
+        <Route path='/complain' element={<Complain />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/technician' element={<Technician />} />
         <Route path='/technicianPage' element={<TechnicianPage/>} />

@@ -45,6 +45,25 @@
             "New Complain":"New Complain",
             "Search Technician":"Search Technician"
            
-      }      
+      },
+     
+      "Complain":{
+            "New Complain":"New Complain",
+            "Full Name":"Full Name",
+            "Enter Full Name":"Enter Full Name",
+            "Phone Number":"Phone Number",
+            "Enter Phone Number":"Enter Phone Number",
+            "Address":"Address",
+            "Enter Your Address":"Enter Your Address",
+            "Service Required":"Service Required",
+            "Choose...":"Choose...",
+            "AC":"AC",
+            "Refrigerator":"Refrigerator",
+            "Description of the Issue or Service Required":"Description of the Issue or Service Required",
+            "I agree to the terms and conditions":"I agree to the terms and conditions",
+            "Register":"Register",
+            "Clear Complain":"Clear Complain"
+  
+                 }
   }
   

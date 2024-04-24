@@ -189,9 +189,9 @@ const Complain: React.FC = () => {
                         }}
                         required
                       >
-                        <option value="">Choose...</option>
+                        <option value="">{t('Complain.Choose...')}</option>
                         <option value="AC">AC</option>
-                        <option value="Refrigerator">Refrigerator</option>
+                        <option value="Refrigerator">{t('Complain.Refrigerator')}</option>
                       </Form.Control>
                     </Form.Group>
                   </Col>
@@ -207,7 +207,6 @@ const Complain: React.FC = () => {
                       <Form.Control
                         as="textarea"
                         rows={3}
-                        placeholder="Issues or Services"
                         name="issueDescription"
                         className="custom-input"
                         value={formData.issueDescription}
@@ -252,7 +251,7 @@ const Complain: React.FC = () => {
 
                   }}
                 >
-                  {t('Complain.Submit')}
+                  {t('Complain.Register')}
                 </Button>
                 <Button
                   variant="light"
@@ -267,7 +266,7 @@ const Complain: React.FC = () => {
                     fontSize: "18px",
                   }}
                 >
-                  {t('Complain.Clear Form')}
+                  {t('Complain.Clear Complain')}
                 </Button>
               </Form>
             </div>

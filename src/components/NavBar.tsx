@@ -70,7 +70,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                     style={{ filter: 'brightness(0) saturate(100%) invert(86%) sepia(30%) saturate(2464%) hue-rotate(329deg) brightness(108%) contrast(97%)' }}
                                     alt="icon"
                                 />
-                                <Offcanvas.Title className='justify-content-center ' style={{ fontWeight: "700",marginLeft:"4rem" }} id={`offcanvasNavbarLabel-expand-${expand}`}>
+                                <Offcanvas.Title className='justify-content-center ' style={{ fontWeight: "700", marginLeft: "4rem" }} id={`offcanvasNavbarLabel-expand-${expand}`}>
                                     {t('Navbar.Technicianwale')}
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
@@ -95,11 +95,17 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     {isLoggedIn ? (
-                                        <Nav.Link onClick={handleLogout} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0'as={Link} to={'/Login'} >Logout</Nav.Link>
+                                        <Nav.Link onClick={handleLogout} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/Login'} >Logout</Nav.Link>
                                     ) : (
                                         <Nav.Link as={Link} to={'/Login'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' > Account</Nav.Link>
                                     )}
                                 </Nav>
+                                <Button
+                                    variant="outline-primary"
+                                    onClick={toggleLanguage}
+                                    className="orange-button" style={{fontWeight:"bold"}}>
+                                    {i18n.language === 'en' ? 'हिन्दी' : 'English'}
+                                </Button>
 
                                 <Nav className="justify-content-end flex-grow-1 pe-3 mt-2" style={{ fontWeight: "700" }}>
                                     <div className='d-block d-sm-none'>
