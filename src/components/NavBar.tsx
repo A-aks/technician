@@ -28,7 +28,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-   
+
 
     useEffect(() => {
 
@@ -68,14 +68,14 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body className='p-1' >
-                                <Nav className="justify-content-start flex-grow-1 pe-3 gap-1" style={{ fontWeight: "700" }} >
+                                <Nav className="justify-content-start flex-grow-1 pe-1 gap-1" style={{ fontWeight: "700" }} >
                                     <p className='d-block d-sm-none bg-warning rounded text-center'>{t('Navbar.Service at your doorstep')}</p>
-                                    <Nav.Link onClick={handleClose} as={Link} to={'/'}  className='nav-heading text-black mx-2' >{t('Navbar.Home')}</Nav.Link>
-                                    <Nav.Link onClick={handleClose} className='nav-heading text-black mx-2' as={Link} to={'/complain'} >{t('Navbar.Complain')}</Nav.Link>
-                                    <Nav.Link onClick={handleClose} className='nav-heading text-black mx-2' as={Link} to={'/technician'} > {t('Navbar.Technician')}</Nav.Link>
+                                    <Nav.Link onClick={handleClose} as={Link} to={'/'} className='nav-heading text-black mx-1' >{t('Navbar.Home')}</Nav.Link>
+                                    <Nav.Link onClick={handleClose} className='nav-heading text-black mx-1' as={Link} to={'/complain'} >{t('Navbar.Complain')}</Nav.Link>
+                                    <Nav.Link onClick={handleClose} className='nav-heading text-black mx-1' as={Link} to={'/technician'} > {t('Navbar.Technician')}</Nav.Link>
                                     {/* <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/technicianPage'} > {t('Navbar.TechnicianPage')}</Nav.Link> */}
-                                    <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' nav-heading text-black mx-2'>{t('Navbar.Contact us')}</Nav.Link>
-                                    <NavDropdown className='nav-heading text-black mx-2' style={{ fontWeight: "700" }} title={t('Navbar.Services')} id="basic-nav-dropdown">
+                                    <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' nav-heading text-black mx-1'>{t('Navbar.Contact us')}</Nav.Link>
+                                    <NavDropdown className='nav-heading text-black mx-1' style={{ fontWeight: "700" }} title={t('Navbar.Services')} id="basic-nav-dropdown">
                                         <NavDropdown.Item className='custom-nav-item' href="/ac-repair" style={{ fontWeight: "700" }}>{t('Navbar.AC Repairing')} </NavDropdown.Item>
                                         <NavDropdown.Item className='custom-nav-item' href="/refrigrator-repair" style={{ fontWeight: "700" }}>{t('Navbar.Refrigrator Repairing')}</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">
@@ -88,17 +88,18 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     {isLoggedIn ? (
-                                        <Nav.Link onClick={handleLogout} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/Login'} >Logout</Nav.Link>
+                                        <Nav.Link onClick={handleLogout} className=' nav-heading text-black mx-1' as={Link} to={'/Login'} >Logout</Nav.Link>
                                     ) : (
-                                        <Nav.Link as={Link} to={'/Login'} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' >{t('Navbar.Account')}</Nav.Link>
+                                        <Nav.Link as={Link} to={'/Login'} className='nav-heading text-black mx-1' >{t('Navbar.Login')}</Nav.Link>
                                     )}
+                                    <Button
+                                        variant=""
+                                        onClick={toggleLanguage}
+                                        className="orange-button mt-1 text-center d-sm-block mx- mx-sm-5 " style={{ fontWeight: "bold", }}>
+                                        {i18n.language === 'en' ? 'हिन्दी' : 'English'}
+                                    </Button>
                                 </Nav>
-                                <Button
-                                    variant="outline-primary"
-                                    onClick={toggleLanguage}
-                                    className="orange-button" style={{fontWeight:"bold"}}>
-                                    {i18n.language === 'en' ? 'हिन्दी' : 'English'}
-                                </Button>
+
 
                                 <Nav className="justify-content-end flex-grow-1 pe-3 mt-2" style={{ fontWeight: "700" }}>
                                     <div className='d-block d-sm-none'>
