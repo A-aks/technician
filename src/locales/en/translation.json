@@ -1,30 +1,30 @@
 {
     "technicians": {
-        "technicians":"Technicians",
-      "allSpecializations": "All Specializations",
-      "refrigerator": "Refrigerator",
-      "ac": "AC",
-      "allLocations": "All Locations",
-      "rewa": "Rewa",
-      "satna": "Satna",
-      "location":"Location",
-      "specialization":"Specialization"
-    },
+                   "technicians":"Technicians",
+                   "allSpecializations": "All Specializations",
+                   "refrigerator": "Refrigerator",
+                   "ac": "AC",
+                   "allLocations": "All Locations",
+                   "rewa": "Rewa",
+                   "satna": "Satna",
+                   "location":"Location",
+                   "specialization":"Specialization"
+                  },
 
     "Navbar":{
-              "Home": "Home",
-              "Technicianwale": "Technicianwale",
-              "Service at your doorstep":"Service at your doorstep",
-              "Complain": "Complain",
-              "Technician": "Technician",
-              "TechnicianPage": "TechnicianPage",
-              "Contact us": "Contact us",
-              "Services": "Services",
-              "AC Repairing": "AC Repairing",
-              "Refrigrator Repairing": "Refrigrator Repairing",
-              "Account": "Account",
-              "Follow and Subscribe":"Follow and Subscribe",
-              "Contact & Email":"Contact & Email"
+                  "Home": "Home",
+                  "Technicianwale": "Technicianwale",
+                  "Service at your doorstep":"Service at your doorstep",
+                  "Complain": "Complain",
+                  "Technician": "Technician",
+                  "TechnicianPage": "TechnicianPage",
+                  "Contact us": "Contact us",
+                  "Services": "Services",
+                  "AC Repairing": "AC Repairing",
+                  "Refrigrator Repairing": "Refrigrator Repairing",
+                  "Login":"Login",
+                  "Follow and Subscribe":"Follow and Subscribe",
+                  "Contact & Email":"Contact & Email"
             },
 
 
@@ -63,7 +63,26 @@
             "I agree to the terms and conditions":"I agree to the terms and conditions",
             "Register":"Register",
             "Clear Complain":"Clear Complain"
-  
-                 }
+                },
+
+      "Contact":{
+            "Contact Us":"Contact Us",
+             "Name":"Name",
+             "Enter your Name":"Enter your Name",
+             "Email":"Email",
+             "Enter your email":"Enter your email",
+             "Phone Number":"Phone Number",
+             "Enter phone number":"Enter phone number",
+             "Service Required":"Service Required",
+             "Choose...":"Choose...",
+             "AC Repair":"AC Repair",
+             "AC Installation":"AC Installation",
+             "Refrigerator Repair":"Refrigerator Repair",
+             "Other":"Other",
+             "Additional Details":"Additional Details",
+             "Send":"Send",
+             "Clear Form":"Clear Form"
+      }  
+                
   }
   

@@ -242,7 +242,7 @@ const Complain: React.FC = () => {
                   type="submit"
                   className="btn-block mt-3"
                   style={{
-                    backgroundColor: "#FFA500",
+                    backgroundColor: "#ffc107",
                     border: "none",
                     borderRadius: "6px",
                     boxShadow: "none",
@@ -259,7 +259,7 @@ const Complain: React.FC = () => {
                   className="btn-block mt-3 mx-2"
                   onClick={() => setFormData(initialFormData)}
                   style={{
-                    backgroundColor: "#FFA500",
+                    backgroundColor: "#ffc107",
                     border: "none",
                     borderRadius: "6px",
                     boxShadow: "none",

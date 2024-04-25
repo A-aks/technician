@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import { Form, Row, Col, Card } from 'react-bootstrap';
 import technicianData from './technicianData.json';
 import '../App.css';
 
@@ -12,8 +13,6 @@ interface Technician {
   location: { en: string; hi: string };
   contact: string;
 }
-
-
 
 export default function Technician() {
   const { t } = useTranslation();
@@ -29,11 +28,6 @@ export default function Technician() {
     setSelectedLocation(event.target.value);
   };
 
-  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = event.target.value;
-    i18n.changeLanguage(newLanguage); // Change the language
-  };
-
   const filteredTechnicians = technicians.filter(technician => {
     const currentSpecialization = i18n.language === 'hi' ? technician.specialization.hi : technician.specialization.en;
     const currentLocation = i18n.language === 'hi' ? technician.location.hi : technician.location.en;
@@ -47,71 +41,60 @@ export default function Technician() {
     return byCategory && byLocation;
   });
 
-
-
-
-
-
   return (
-    <div className="container mt-4">
-      <div className="language-dropdown d-flex justify-content-end">
-        <select onChange={changeLanguage} value={i18n.language}>
-          <option value="en">English</option>
-          <option value="hi">Hindi</option>
-        </select>
-      </div>
-      <h1 className="mb-4 text-center">{t('technicians.technicians')}</h1>
-      <div className="row mb-4 justify-content-center">
-        <div className="col-md-8 d-flex gap-2">
-          <select
-            className="form-select mb-2"
+    <div className="container mt-4" style={{ fontWeight: "700" }}>
+      <h2 className="mb-4 text-center" style={{ fontWeight: "700" }}>{t('technicians.technicians')}</h2>
+      <Row className="mb-4 justify-content-center">
+        <Col md={8} className="d-flex gap-2">
+          <Form.Select
+            className="custom-input mb-2"
+            style={{ fontWeight: "700" }}
             value={selectedCategory}
             onChange={handleCategoryChange}
           >
-            <option value="All">{t('technicians.allSpecializations')}</option>
-            <option value="Refrigerator">{t('technicians.refrigerator')}</option>
-            <option value="AC">{t('technicians.ac')}</option>
-          </select>
-          <select
-            className="form-select mb-2"
+            <option value="All" style={{ fontWeight: "700" }}>{t('technicians.allSpecializations')}</option>
+            <option value="Refrigerator" style={{ fontWeight: "700" }}>{t('technicians.refrigerator')}</option>
+            <option value="AC" style={{ fontWeight: "700" }}>{t('technicians.ac')}</option>
+          </Form.Select>
+          <Form.Select 
+            className=" custom-input mb-2"
+            style={{ fontWeight: "700" }}
             value={selectedLocation}
             onChange={handleLocationChange}
           >
-            <option value="All">{t('technicians.allLocations')}</option>
-            <option value="Rewa">{t('technicians.rewa')}</option>
-            <option value="Satna">{t('technicians.satna')}</option>
-
-          </select>
-        </div>
-      </div>
-      <div className="row  justify-content-center">
+            <option value="All" style={{ fontWeight: "700" }}>{t('technicians.allLocations')}</option>
+            <option value="Rewa" style={{ fontWeight: "700" }}>{t('technicians.rewa')}</option>
+            <option value="Satna" style={{ fontWeight: "700" }}>{t('technicians.satna')}</option>
+          </Form.Select>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
         {filteredTechnicians.map((technician) => (
-          <div key={technician.id} className="col-md-5 mb-2">
-            <div className="card d-flex flex-row  h-100 ">
-              <div className="card-img-left" style={{ width: "35%", height: "auto" }}>
-                <img
+          <Col key={technician.id} md={5} className="mb-2">
+            <Card className="d-flex flex-row h-100" style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)" }}>
+              <div style={{ width: "35%", height: "auto" }}>
+                <Card.Img
                   src={technician.image}
-                  className="card-img img-fluid"
                   alt={t('technician.name')}
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </div>
-              <div className="card-body" style={{ width: "65%", maxHeight: "130px" }}>
-                <h5 className="card-title">{technician.name}</h5>
-                <p className="card-text" style={{ marginBottom: "3px" }}>
-                  <strong>{t('technicians.specialization')} :</strong>  {i18n.language === 'hi' ? technician.specialization.hi : technician.specialization.en}
-                </p>
-                <p className="card-text" style={{ marginBottom: "3px" }}>
-                  <strong>{t('technicians.location')} :</strong>   {i18n.language === 'hi' ? technician.location.hi : technician.location.en}
-                </p>
-                {/* <p className="card-text">
-            <strong>Contact :</strong> {technician.contact}
-          </p> */}
-              </div>
-            </div>
-          </div>
+              <Card.Body style={{ width: "65%", maxHeight: "130px" }}>
+                <Card.Title style={{ fontWeight: "700" }}>{technician.name}</Card.Title>
+                <Card.Text style={{ marginBottom: "3px" }}>
+                  <strong>{t('technicians.specialization')} :</strong> {i18n.language === 'hi' ? technician.specialization.hi : technician.specialization.en}
+                </Card.Text>
+                <Card.Text style={{ marginBottom: "3px" }}>
+                  <strong>{t('technicians.location')} :</strong> {i18n.language === 'hi' ? technician.location.hi : technician.location.en}
+                </Card.Text>
+                {/* <Card.Text>
+                  <strong>Contact :</strong> {technician.contact}
+                </Card.Text> */}
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 }

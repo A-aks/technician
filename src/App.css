@@ -80,18 +80,18 @@
 }
 .btn-light-orange {
   color: #fff;
-  background-color: orangered; /* Light orange color */
-  border-color: #ffa500; /* Light orange color */
+  background-color: #ffc107; /* Light orange color */
+  border-color: #ffc107; /* Light orange color */
 }
 
 .btn-light-orange:hover {
   color: #fff;
-  background-color: #ff7f00; /* Slightly darker shade of orange on hover */
-  border-color: #ff7f00; /* Slightly darker shade of orange on hover */
+  background-color: #ffc107; /* Slightly darker shade of orange on hover */
+  border-color: #ffc107; /* Slightly darker shade of orange on hover */
 }
 
 .btn-light-orange:focus, .btn-light-orange.focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.5); /* Focus shadow color for accessibility */
+  box-shadow: 0 0 0 0.2rem #ffc107; /* Focus shadow color for accessibility */
 }
 .light-orange {
   color: #fff;
@@ -100,8 +100,8 @@
 }
 
 .light-orange:hover {
-  background-color: #ffb74d; /* Slightly darker shade of orange on hover */
-  border-color: #ffb74d; /* Slightly darker shade of orange on hover */
+  background-color: #ffc107; /* Slightly darker shade of orange on hover */
+  border-color: #ffc107; /* Slightly darker shade of orange on hover */
 }
 
 .card-3d {
@@ -111,21 +111,21 @@
 }
 
 .card-3d:hover {
-  box-shadow: 0 0 15px orange; /* Increase the box shadow on hover for a more pronounced 3D effect */
+  box-shadow: 0 0 15px #ffc107; /* Increase the box shadow on hover for a more pronounced 3D effect */
 }
 
 .container-custom {
-  background-color: orange;
+  background-color: #ffc107;
 }
 .form-control:focus {
-  border-color:orange;
-  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+  border-color:#ffc107;
+  box-shadow: 0 0 0 0.2rem #ffc107
 }
 .custom-input:focus,
 .custom-select:focus,
 .custom-textarea:focus {
-  border-color: orange !important;
-  box-shadow: 0 0 0 0.09rem rgb(242, 213, 85) !important;
+  border-color: #ffc107 !important;
+  box-shadow: 0 0 0 0.09rem #ffc107!important;
 }
 
 .language-dropdown select {
@@ -136,7 +136,7 @@
 }
 
 .language-dropdown select:hover {
-  box-shadow: 0 0 8px orange;
+  box-shadow: #ffc107;
 }
 .input:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.5) !important; /* Orange shadow */
