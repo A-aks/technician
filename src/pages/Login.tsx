@@ -43,15 +43,15 @@ const Login: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicPhoneNumber">
               <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="tel" placeholder="Enter phone number" required value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="input-focus-orange" />
+              <Form.Control type="tel" placeholder="Enter phone number" required value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="input" />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} className="input-focus-orange" />
+              <Form.Control type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} className="input" />
             </Form.Group>
 
-            <Button variant="light-orange" type="submit" className='mb-3 mt-3' disabled={loading}>
+            <Button  type="submit" className='mb-3 mt-3' disabled={loading} style={{ backgroundColor: "orange", border: "none", color: "white" }}>
               {loading ? 'Logging in...' : 'Login'}
             </Button>
 

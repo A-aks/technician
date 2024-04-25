@@ -138,50 +138,125 @@
 .language-dropdown select:hover {
   box-shadow: 0 0 8px orange;
 }
-.input-focus-orange:focus,
-.input-focus-orange:active {
-  border-color: orange !important;
+.input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.5) !important; /* Orange shadow */
+}
+.service-card {
+  width: 100%;
+  height: 90%;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Navbar */
-
-.nav-heading {
-  text-align: start;
-  padding-left: 0.1rem; 
-  padding-right: 0.1rem;
-  border-radius: 0.375rem; 
-  color: #000; 
-  margin-top: 0.25rem; 
-}
-.nav-heading:hover{
-  background-color: #ffc107; 
-  /* color: white !important; */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px orange;
 }
 
-.orange-button {
-  color: black !important;
-  border-color: black !important;
+.service-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.service-card .card-title {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.service-card .card-text {
+  color: #6c757d;
+}
+.service-package-card {
+  background-color: #ffc107;
+  color: #212529;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-package-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-package-card .card-body {
+  padding: 20px;
+}
+
+.service-package-card .card-title {
+  font-weight: bold;
+}
+
+.service-package-card .card-text {
+  color: #495057;
+}
+
+.service-package-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.service-package-card ul li {
+  margin-bottom: 10px;
+}
+
+.service-package-card .btn-orange {
+  background-color: #ff6c00;
+  border-color: #ff6c00;
+}
+
+.service-package-card .btn-orange:hover {
+  background-color: #e65100;
+  border-color: #e65100;
+}
+
+.special-offer-card {
+  background-color: #fff; /* White background */
+  border: 2px solid #ffa500; /* Orange border */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.special-offer-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+  border-color: #ff7f00; /* Darker orange border on hover */
+}
+
+.special-offer-card .card-body {
+  padding: 20px;
+}
+
+.special-offer-card .card-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ffa500; /* Orange title */
+}
+
+.special-offer-card .card-text {
+  color: #555;
+}
+
+.special-offer-card button {
+  background-color: #ffa500; /* Orange button background */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.special-offer-card button:hover {
+  background-color: #ff7f00; /* Darker orange on hover */
 }
 
 
-.orange-button:hover {
-  background-color: orange !important;
-  /* color: white !important; */
-  border-color: orange !important;
-}
 
-/* Services  */
 
-.custom-nav-item {
-  /* text-align: start; */
-  padding-left: 0.1rem; 
-  padding-right: 0.1rem;
-  border-radius: 0.375rem; 
-  color: #000; 
-  margin-top: 0.25rem;
-}
 
-.custom-nav-item:hover {
-  background-color: #ffc107 !important; 
-  color: black;
-}
