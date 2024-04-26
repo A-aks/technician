@@ -1,0 +1,122 @@
+/* CustomerForm.css */
+
+/* Style for the buttons */
+/* CustomerForm.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Rest of your CSS styles */
+  /* CustomerForm.css */
+
+/* Add these styles for the row containing service name, charges, and the "Add Service" button */
+.add-service-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .service-input {
+    margin-right: 5px;
+  }
+  
+  /* Rest of your CSS styles */
+/* CustomerForm.css */
+
+/* Add these styles to align the "Add Service" button with service inputs */
+.add-service-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+  }
+  
+  .service-input {
+    flex: 1; /* Distribute available space evenly */
+    margin-right: 10px; /* Adjust spacing between inputs */
+  }
+  
+  .add-service-button {
+    flex-shrink: 5;
+    margin-top: 20px; /* Prevent button from shrinking */
+  }
+
+  /* CustomerForm.css */
+
+.customer-details-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Rest of your CSS styles */
+/* CustomerForm.css */
+
+.customer-details-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .customer-details-box div {
+    margin-bottom: 10px;
+  }
+  
+  .details-heading {
+    text-align: center;
+  }
+  
+  /* Rest of your CSS styles */
+/* CustomerForm.css */
+
+.customer-details-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  /* CustomerForm.css */
+
+/* Center align the heading */
+
+  
+  .slick-slider {
+    margin-bottom: 20px;
+  }
+  
+  /* Rest of your CSS styles */
+/* CustomerForm.css */
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  color: blaack; /* Change the color of the arrows as needed */
+}
+      
+.submit-button,
+.clear-button,
+.add-service-button {
+  background-color: blue; /* Change the background color to blue */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Padding for the buttons */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  margin-right: 10px; /* Add some space between the buttons */
+}
+
+/* Style for the button group */
+.button-group {
+  margin-top: 20px; /* Add some top margin to separate from the services */
+}
