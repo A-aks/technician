@@ -5,7 +5,14 @@ import { Icon } from '../components/Icon';
 import { Link } from 'react-router-dom';
 import wepik from '../assets/wepik-export-20240410101805ufdL.png'
 import { useTranslation } from 'react-i18next';
-import { ThermometerSnow, Tools, Plug } from 'react-bootstrap-icons';
+import { ThermometerSnow, Tools, Plug  } from 'react-bootstrap-icons';
+import { RiThermometerLine } from 'react-icons/ri';
+import { GiWaterDrop } from 'react-icons/gi';
+import { FaPlug } from 'react-icons/fa';
+import { MdComputer, MdLocalCarWash, MdPhoneAndroid } from 'react-icons/md';
+import { IoMdHome } from 'react-icons/io';
+import { GiGardeningShears } from 'react-icons/gi';
+import { AiFillSafetyCertificate } from 'react-icons/ai';
 import '../App.css'
 interface cardlist {
   id: string;
@@ -32,40 +39,62 @@ export default function Home() {
     {
       id: 1,
       title: "AC Repair",
-      icon: <ThermometerSnow />,
+      icon: <RiThermometerLine size={50} color="blue" />,
       description: "Expert repair and maintenance services for air conditioning units. Our certified technicians ensure your AC runs efficiently, keeping you cool all year round.",
       route: "/ac-repair",
     },
     {
       id: 2,
       title: "Refrigerator Repair",
-      icon: <ThermometerSnow />,
+      icon: <ThermometerSnow size={50} color="green" />,
       description: "Professional repair and servicing of refrigerators and freezers. From fixing leaks to replacing compressors, we keep your food fresh and your appliances running smoothly.",
-      route: "/refrigrator-repair"
+      route: "/refrigerator-repair"
     },
     {
       id: 3,
       title: "Electrician",
-      icon: <Tools />,
+      icon: <Tools size={50} color="red" />,
       description: "Comprehensive electrical services including wiring, installations, repairs, and troubleshooting. Our electricians ensure safety and reliability in every job.",
-      route: "/ac-repair",
+      route: "/electrician",
     },
     {
       id: 4,
       title: "Plumber",
-      icon: <Plug />,
+      icon: <FaPlug size={50} color="orange" />,
       description: "Expert plumbing services for residential and commercial properties. From leaky faucets to pipe replacements, our plumbers deliver quality workmanship and reliable solutions.",
-      route: "/ac-repair",
+      route: "/plumber",
     },
     {
       id: 5,
       title: "Computer Installation",
-      icon: <ThermometerSnow />,
+      icon: <MdComputer size={50} color="purple" />,
       description: "Professional installation services for computers and peripherals. From setting up new systems to configuring software, we ensure your computer runs smoothly and efficiently.",
-      route: "/ac-repair",
+      route: "/computer-installation",
     },
-    // Add more service categories as needed
+    {
+      id: 6,
+      title: "Water Heater Repair",
+      icon: <GiWaterDrop size={50} color="teal" />,
+      description: "Specialized repair and maintenance services for water heaters. Our technicians ensure your water heater operates efficiently, providing hot water when you need it.",
+      route: "/water-heater-repair",
+    },
+    {
+      id: 7,
+      title: "Washing Machine Repair",
+      icon: <RiThermometerLine size={50} color="blue" />,
+      description: "Professional repair and servicing of washing machines. From fixing mechanical issues to troubleshooting electrical problems, we ensure your washing machine functions properly.",
+      route: "/washing-machine-repair",
+    },
+    {
+      id: 8,
+      title: "Security System Installation",
+      icon: <AiFillSafetyCertificate size={50} color="red" />,
+      description: "Professional installation of security systems for homes and businesses. From CCTV cameras to alarm systems, we keep your property safe and secure.",
+      route: "/security-system-installation",
+    },
+  
   ];
+  
   const packages = [
     {
       id: 1,
@@ -107,7 +136,7 @@ export default function Home() {
   return (
     <div >
       <div className='text-center' >
-        <Carousel className=' md:cols-6' style={{ backgroundColor: "#DBA800" }}>
+        <Carousel className=' md:cols-6' style={{ backgroundColor: "#FFB300" }}>
           <Carousel.Item>
             <Image className='opacity-100 shadow' height={250} rounded src="https://img.freepik.com/free-photo/man-servant-getting-payed-by-owner_23-2149587635.jpg?w=740&t=st=1712740643~exp=1712741243~hmac=3a4ab6ff2d9a82f1e3d3cc1ae677f8d85f090402a3ee84b5885f24c83c1f06c3" />
             <Carousel.Caption>
@@ -167,13 +196,13 @@ export default function Home() {
         </Link>
 
       </Container>
-      <Container fluid className="mt-5 ">
+      <Container fluid className="mt-5 " >
       <h2 className="text-center mb-4">Service Categories</h2>
       <Row className="justify-content-center">
         {serviceCategories.map((category) => (
           <Col sm={12} md={6} lg={6} key={category.id}>
             <Link to={category.route} className="text-decoration-none">
-              <Card className="mb-3 service-card ">
+              <Card className="mb-3 service-card " >
                 <Card.Body>
                   {category.icon}
                   <Card.Title className="mt-3">{category.title}</Card.Title>
@@ -181,7 +210,7 @@ export default function Home() {
                     <p>{category.description}</p>
                   </Card.Text>
                   <div className="text-center">
-                    <Link to={category.route} className="btn btn-primary">Explore {category.title}</Link>
+                    <Link to={category.route} className="btn btn-primary"style={{backgroundColor:"#ffaa00"}}>Explore {category.title}</Link>
                   </div>
                 </Card.Body>
               </Card>
