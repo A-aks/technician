@@ -1,10 +1,9 @@
 import React, { useState, ChangeEvent } from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import CustomerForm from './CustomerForm';
 
 const TechnicianPage = () => {
-  const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -13,9 +12,7 @@ const TechnicianPage = () => {
     issueDescription: ""
   });
 
-  const handleContactCustomer = () => {
-    setShowModal(true);
-  };
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     // Logic to handle form submission
@@ -28,7 +25,8 @@ const TechnicianPage = () => {
       serviceRequired: "",
       issueDescription: ""
     });
-    setShowModal(false);
+
+  navigate("/customer-form");
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -142,7 +140,9 @@ const TechnicianPage = () => {
                 <td>Laptop</td>
                 <td>Assigned</td>
                 <td>
-                  <button className="btn btn-primary" onClick={handleContactCustomer}>Contact Customer</button>
+                <Link to="/customer-form">
+                  <button className="btn btn-primary" >Contact Customer</button>
+                </Link>
                 </td>
               </tr>
             </tbody>
@@ -180,44 +180,10 @@ const TechnicianPage = () => {
           </table>
         </div>
       </div>
-
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Contact Customer</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="mb-3">
-            <label htmlFor="fullName" className="form-label">Full Name:</label>
-            <input type="text" className="form-control" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phoneNumber" className="form-label">Phone Number:</label>
-            <input type="text" className="form-control" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="address" className="form-label">Address:</label>
-            <input type="text" className="form-control" id="address" name="address" value={formData.address} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="serviceRequired" className="form-label">Service Required:</label>
-            <input type="text" className="form-control" id="serviceRequired" name="serviceRequired" value={formData.serviceRequired} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="issueDescription" className="form-label">Describe Your Issue:</label>
-            <textarea className="form-control" id="issueDescription" name="issueDescription" value={formData.issueDescription} onChange={handleChange}></textarea>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleSubmit}>
-            Submit
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <Routes>
+      <Route path="/customer-form" element={<CustomerForm />}/>
+      </Routes>
     </div>
   );
 };
-
 export default TechnicianPage;
