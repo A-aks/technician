@@ -16,7 +16,7 @@ import TechnicianPage from './pages/TechnicianPage';
 import Admin from './pages/Admin';
 import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
 import i18n from './i18n'; // Import i18n configuration
-
+import CustomerForm from './pages/CustomerForm.js'; 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -43,6 +43,7 @@ function App() {
         <Route path='/Login' element={<Login handleLogin={handleLogin} />}/>
         <Route path='/refrigrator-repair' element={<RefrigratorRepairs />} />
         <Route path='/TechPage' element={<TechnicianPage />} />
+        <Route path="/customer-form" element={<CustomerForm />} />
         <Route path='/admin' element={<Admin />} />
       </Routes>
       <Footer />
