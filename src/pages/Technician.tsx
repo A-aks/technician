@@ -5,7 +5,7 @@ import { Form, Row, Col, Card } from 'react-bootstrap';
 import technicianData from './technicianData.json';
 import '../App.css';
 
-interface Technician {
+interface Technicianwala {
   id: number;
   name: string;
   specialization: { en: string; hi: string };
@@ -18,7 +18,7 @@ export default function Technician() {
   const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedLocation, setSelectedLocation] = useState("All");
-  const technicians: Technician[] = technicianData.technicians;
+  const technicianwala: Technicianwala[] = technicianData.technicians;
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(event.target.value);
@@ -28,9 +28,9 @@ export default function Technician() {
     setSelectedLocation(event.target.value);
   };
 
-  const filteredTechnicians = technicians.filter(technician => {
-    const currentSpecialization = i18n.language === 'hi' ? technician.specialization.hi : technician.specialization.en;
-    const currentLocation = i18n.language === 'hi' ? technician.location.hi : technician.location.en;
+  const filteredTechnicians = technicianwala.filter(technicianwala => {
+    const currentSpecialization = i18n.language === 'hi' ? technicianwala.specialization.hi : technicianwala.specialization.en;
+    const currentLocation = i18n.language === 'hi' ? technicianwala.location.hi : technicianwala.location.en;
 
     const selectedCategoryTranslation = i18n.language === 'hi' ? t(`technicians.${selectedCategory.toLowerCase()}`) : selectedCategory;
     const byCategory = selectedCategory === "All" || currentSpecialization === selectedCategoryTranslation;

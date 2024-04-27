@@ -75,7 +75,7 @@ const Complain: React.FC = () => {
       <Container className="">
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={12} className="my-3">
-            <div className="container  p-3 "
+            <div className="container  p-3 d-flex flex-column "
               style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
               <h2
                 className="text-center mb-4 custom-header"

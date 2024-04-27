@@ -31,13 +31,13 @@ const Login: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
   };
 
   return (
-    <Container className='card-3d mt-3 mb-3 w-75'>
-      <Row className="justify-content-center mb-4">
+    <Container className='card-3d w-75 d-flex flex-column'>
+      <Container className="justify-content-center">
         <Col xs={6} md={3} className="text-center">
-          <Image src="https://transcendglobalservices.com/wp-content/uploads/2021/04/WhatsApp-Image-2022-07-18-at-4.19.28-PM-copy.png" alt="User Logo" fluid style={{ maxWidth: '100px' }} />
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
+          <Image src="https://transcendglobalservices.com/wp-content/uploads/2021/04/WhatsApp-Image-2022-07-18-at-4.19.28-PM-copy.png" alt="User Logo" fluid style={{ maxWidth: '100px' }}/>
+        </Col> 
+      </Container>
+      <Container className="justify-content-center">
         <Col xs={12} md={6}> {/* Set xs={12} to make it full width on mobile */}
           <h2 className="text-center">Login </h2>
           <Form onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ const Login: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
             {error && <p className="text-danger">{error}</p>}
           </Form>
         </Col>
-      </Row>
+      </Container>
     </Container>
   );
 };
