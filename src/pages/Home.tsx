@@ -171,7 +171,7 @@ export default function Home() {
           <p style={{ fontWeight: "700" }}>{t('Home.New Complain')}</p>
         </Link>
 
-        <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none' }}>
+        <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color:"black"}}>
           <Icon iconName="Search" size={25} color='white' />
           <p style={{ fontWeight: "700" }}>{t('Home.Search Technician')}</p>
         </Link>
