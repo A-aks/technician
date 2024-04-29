@@ -93,16 +93,20 @@
 .container-custom {
   background-color: #ffc107;
 }
-.form-control:focus {
-  border-color:#ffc107;
-  box-shadow: 0 0 0 0.2rem #ffc107
+.custom-input:focus {
+  border: 2px solid #ffc107 !important;
+  border-radius: 4px !important;
+  box-shadow:0 0 12px  #ffc107!important; 
+  outline: #ffc107 !important; 
 }
-.custom-input:focus,
-.custom-select:focus,
-.custom-textarea:focus {
-  border-color: #ffc107 !important;
-  box-shadow: 0 0 0 0.09rem #ffc107!important;
+.custom-input:hover {
+  border-color: #ffc107 !important; 
 }
+.custom-input.custom-select option:hover {
+  background-color: orange;
+}
+
+
 
 .language-dropdown select {
   border-radius: 20px;

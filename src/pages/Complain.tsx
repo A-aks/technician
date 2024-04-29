@@ -76,7 +76,7 @@ const Complain: React.FC = () => {
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={12} className="my-3">
             <div className="container  p-3 d-flex flex-column "
-              style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
+              style={{ boxShadow: "0px 2px 10px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
               <h2
                 className="text-center mb-4 custom-header"
                 style={{ color: "#333", fontWeight: "bold" }}
@@ -179,7 +179,7 @@ const Complain: React.FC = () => {
                       </Form.Label>
                       <Form.Control
                         as="select"
-                        className="custom-select custom-input"
+                        className="custom-input "
                         name="service"
                         onChange={handleChange}
                         style={{
@@ -189,8 +189,8 @@ const Complain: React.FC = () => {
                         }}
                         required
                       >
-                        <option value="">{t('Complain.Choose...')}</option>
-                        <option value="AC">{t('Complain.AC')}</option>
+                        <option value=""disabled selected>{t('Complain.Choose...')}</option>
+                        <option value="AC"> {t('Complain.AC')}</option>
                         <option value="Refrigerator">{t('Complain.Refrigerator')}</option>
                       </Form.Control>
                     </Form.Group>
