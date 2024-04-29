@@ -39,28 +39,28 @@ export default function Home() {
     {
       id: 1,
       title: "AC Repair",
-      icon: <RiThermometerLine size={50} color="blue" />,
+      image: "https://static.vecteezy.com/system/resources/previews/004/809/382/original/white-air-conditioner-in-3d-realistic-white-air-conditioner-isolated-on-white-background-vector.jpg",
       description: "Expert repair and maintenance services for air conditioning units. Our certified technicians ensure your AC runs efficiently, keeping you cool all year round.",
       route: "/ac-repair",
     },
     {
       id: 2,
       title: "Refrigerator Repair",
-      icon: <ThermometerSnow size={50} color="green" />,
+      image: "https://th.bing.com/th/id/OIP.FUateM3ELVxJyC40A6sUtwHaGX?rs=1&pid=ImgDetMain",
       description: "Professional repair and servicing of refrigerators and freezers. From fixing leaks to replacing compressors, we keep your food fresh and your appliances running smoothly.",
       route: "/refrigerator-repair"
     },
     {
       id: 3,
       title: "Electrician",
-      icon: <Tools size={50} color="red" />,
+      image: "https://th.bing.com/th/id/OIP.FADoRoM0sREqgRBiyHcBBAHaH_?w=1000&h=1080&rs=1&pid=ImgDetMain",
       description: "Comprehensive electrical services including wiring, installations, repairs, and troubleshooting. Our electricians ensure safety and reliability in every job.",
       route: "/electrician",
     },
     {
       id: 4,
       title: "Plumber",
-      icon: <FaPlug size={50} color="orange" />,
+      image: "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/9034/plumber-clipart-md.png",
       description: "Expert plumbing services for residential and commercial properties. From leaky faucets to pipe replacements, our plumbers deliver quality workmanship and reliable solutions.",
       route: "/plumber",
     },
@@ -74,14 +74,14 @@ export default function Home() {
     {
       id: 6,
       title: "Water Heater Repair",
-      icon: <GiWaterDrop size={50} color="teal" />,
+      image: "https://th.bing.com/th/id/OIP.ZHWja8PfWUmz3osseBFSQQHaHa?rs=1&pid=ImgDetMain",
       description: "Specialized repair and maintenance services for water heaters. Our technicians ensure your water heater operates efficiently, providing hot water when you need it.",
       route: "/water-heater-repair",
     },
     {
       id: 7,
       title: "Washing Machine Repair",
-      icon: <RiThermometerLine size={50} color="blue" />,
+      image: "https://th.bing.com/th/id/OIP._jCvJPsm5wGjXqDwTWJjQQHaI5?rs=1&pid=ImgDetMain",
       description: "Professional repair and servicing of washing machines. From fixing mechanical issues to troubleshooting electrical problems, we ensure your washing machine functions properly.",
       route: "/washing-machine-repair",
     },
@@ -95,26 +95,7 @@ export default function Home() {
   
   ];
   
-  const packages = [
-    {
-      id: 1,
-      name: 'Basic Package',
-      price: '$99',
-      services: ['AC Repair', 'Plumbing Check', 'Electrical Inspection'],
-    },
-    {
-      id: 2,
-      name: 'Standard Package',
-      price: '$149',
-      services: ['AC Repair', 'Plumbing Check', 'Electrical Inspection', 'Appliance Installation'],
-    },
-    {
-      id: 3,
-      name: 'Premium Package',
-      price: '$199',
-      services: ['AC Repair', 'Plumbing Check', 'Electrical Inspection', 'Appliance Installation', 'Home Cleaning'],
-    },
-  ];
+  
   const offers = [
     {
       id: 1,
@@ -184,7 +165,7 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <Container fluid className='d-flex flex-wrap justify-content-center align-items-center'>
+      <Container fluid className=' d-flex flex-wrap justify-content-center align-items-center'>
         <Link to="/complain" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none' }}>
           <Icon iconName="ChatQuoteFill" color='white' size={25} />
           <p style={{ fontWeight: "700" }}>{t('Home.New Complain')}</p>
@@ -200,12 +181,16 @@ export default function Home() {
       <h2 className="text-center mb-4">Service Categories</h2>
       <Row className="justify-content-center">
         {serviceCategories.map((category) => (
-          <Col sm={12} md={6} lg={6} key={category.id}>
+          <Col sm={12} md={6} lg={6} key={category.id} style={{marginBottom:"1rem"}}>
             <Link to={category.route} className="text-decoration-none">
-              <Card className="mb-3 service-card " >
+              <Card className="mb-3  "  style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px",height:"100%",width:"100%" }}>
                 <Card.Body>
+                  <div className='text-center'>
                   {category.icon}
-                  <Card.Title className="mt-3">{category.title}</Card.Title>
+                  <img src={category.image}  style={{height:"100px"}} />
+                  </div>
+                 
+                  <Card.Title className=" text-center ">{category.title}</Card.Title>
                   <Card.Text>
                     <p>{category.description}</p>
                   </Card.Text>
@@ -219,29 +204,7 @@ export default function Home() {
         ))}
       </Row>
     </Container>
-    <Container className="mt-5">
-      <h2 className="text-center mb-4">Service Packages</h2>
-      <Row className="justify-content-center">
-        {packages.map((pkg) => (
-          <Col sm={12} md={6} lg={4} key={pkg.id}>
-            <Card className="mb-3 service-package-card">
-              <Card.Body>
-                <Card.Title className="text-center">{pkg.name}</Card.Title>
-                <Card.Text className="text-center">{pkg.price}</Card.Text>
-                <ul>
-                  {pkg.services.map((service, index) => (
-                    <li key={index}>{service}</li>
-                  ))}
-                </ul>
-                <div className="text-center">
-                  <button className="btn btn-orange">Select Package</button>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+   
     <Container className="mt-5">
       <h2 className="text-center mb-4">Special Offers</h2>
       <Row className="justify-content-center">

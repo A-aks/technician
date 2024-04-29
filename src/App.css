@@ -115,79 +115,7 @@
   box-shadow: #ffc107;
 }
 
-.service-card {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 10px orange;
-}
-
-.service-card .card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.service-card .card-title {
-  font-weight: 700;
-  margin-top: 20px;
-}
-
-.service-card .card-text {
-  color: #6c757d;
-}
-.service-package-card {
-  background-color: #ffc107;
-  color: #212529;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.service-package-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-package-card .card-body {
-  padding: 20px;
-}
-
-.service-package-card .card-title {
-  font-weight: bold;
-}
-
-.service-package-card .card-text {
-  color: #495057;
-}
-
-.service-package-card ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.service-package-card ul li {
-  margin-bottom: 10px;
-}
-
-.service-package-card .btn-orange {
-  background-color: #ff6c00;
-  border-color: #ff6c00;
-}
-
-.service-package-card .btn-orange:hover {
-  background-color: #e65100;
-  border-color: #e65100;
-}
 
 .special-offer-card {
   background-color: #fff; /* White background */
