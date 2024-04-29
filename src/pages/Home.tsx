@@ -171,14 +171,14 @@ export default function Home() {
           <p style={{ fontWeight: "700" }}>{t('Home.New Complain')}</p>
         </Link>
 
-        <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none' }}>
+        <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color:"black"  }}>
           <Icon iconName="Search" size={25} color='white' />
           <p style={{ fontWeight: "700" }}>{t('Home.Search Technician')}</p>
         </Link>
 
       </Container>
       <Container fluid className="mt-5 " >
-      <h2 className="text-center mb-4">Service Categories</h2>
+      <h2 className="text-center mb-4"  style={{ fontWeight: "700" }}>Service Categories</h2>
       <Row className="justify-content-center">
         {serviceCategories.map((category) => (
           <Col sm={12} md={6} lg={6} key={category.id} style={{marginBottom:"1rem"}}>
