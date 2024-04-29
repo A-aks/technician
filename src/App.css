@@ -229,6 +229,10 @@
 .special-offer-card button:hover {
   background-color: #ff7f00; /* Darker orange on hover */
 }
+.Translate-button{
+  border-radius: 5px !important;
+  background-color: #ffc107 !important;
+}
 
 
 

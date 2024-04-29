@@ -95,7 +95,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                     <Button
                                         variant=""
                                         onClick={toggleLanguage}
-                                        className="orange-button mt-1 text-center d-sm-block mx- mx-sm-5 " style={{ fontWeight: "bold", }}>
+                                        className="Translate-button mt-1 text-center d-sm-block mx- mx-sm-5 " style={{ fontWeight: "bold", }}>
                                         {i18n.language === 'en' ? 'हिन्दी' : 'English'}
                                     </Button>
                                 </Nav>
