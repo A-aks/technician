@@ -166,7 +166,7 @@ export default function Home() {
       </div>
 
       <Container fluid className=' d-flex flex-wrap justify-content-center align-items-center'>
-        <Link to="/complain" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none' }}>
+        <Link to="/complain" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color:"black"   }}>
           <Icon iconName="ChatQuoteFill" color='white' size={25} />
           <p style={{ fontWeight: "700" }}>{t('Home.New Complain')}</p>
         </Link>
