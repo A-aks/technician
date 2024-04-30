@@ -51,7 +51,7 @@ const Login: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
               <Form.Control type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}  className="custom-input" style={{ border: '2px solid #ccc', borderRadius: '4px', boxShadow: 'none' }} />
             </Form.Group>
 
-            <Button  type="submit" className='mb-3 mt-3' disabled={loading} style={{ backgroundColor: "orange", border: "none", color: "white" }}>
+            <Button  type="submit" className='complain-button heading-weight mb-3 mt-3' disabled={loading} style={{ backgroundColor: "orange", border: "none", color: "white" }}>
               {loading ? 'Logging in...' : 'Login'}
             </Button>
 

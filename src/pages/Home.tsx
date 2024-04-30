@@ -201,17 +201,17 @@ export default function Home() {
       <Container fluid className=' d-flex flex-wrap justify-content-center align-items-center'>
         <Link to="/complain" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color: "black" }}>
           <Icon iconName="ChatQuoteFill" color='white' size={25} />
-          <p style={{ fontWeight: "700" }}>{t('Home.New Complain')}</p>
+          <p className='heading-weight'>{t('Home.New Complain')}</p>
         </Link>
 
         <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color: "black" }}>
           <Icon iconName="Search" size={25} color='white' />
-          <p style={{ fontWeight: "700" }}>{t('Home.Search Technician')}</p>
+          <p className=' heading-weight'>{t('Home.Search Technician')}</p>
         </Link>
 
       </Container>
       <Container fluid className="mt-5 " >
-        <h2 className="text-center mb-4">Service Categories</h2>
+        <h2 className="heading-weight text-center mb-4">Service Categories</h2>
         <Row className="justify-content-center">
           {serviceCategories.map((category) => (
             <Col sm={12} md={6} lg={6} key={category.id} style={{ marginBottom: "1rem" }}>
@@ -248,7 +248,7 @@ export default function Home() {
                   <Card.Title className="text-center">{offer.title}</Card.Title>
                   <Card.Text className="text-center">{offer.description}</Card.Text>
                   <div className="text-center">
-                    <button className="btn btn-warning">Claim Offer</button>
+                    <button className="complain-button tn btn-warning">Claim Offer</button>
                   </div>
                 </Card.Body>
               </Card>
@@ -276,7 +276,16 @@ export default function Home() {
                   <FaMapMarkerAlt /> {technician.location}
                 </Card.Text>
                 <div className="text-center">
-                  <Button variant="warning">
+                  <Button variant=""
+                  className='complain-button'
+                   style={{
+                    backgroundColor: "#ffc107",
+                    border: "none",
+                    borderRadius: "6px",
+                    boxShadow: "none",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                  }}>
                     <FaUser /> Profile
                   </Button>
                 </div>
