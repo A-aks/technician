@@ -75,8 +75,8 @@ const TechnicianContactUs: React.FC = () => {
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={12} className="my-3">
             <div className=" custom-form-container p-3" style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
-              <h2 className="text-center mb-4 custom-header" style={{ color: '#333', fontWeight: 'bold' }}>
-              &#x1F4DE; {/* Phone Icon */}
+              <h2 className="heading-weight text-center mb-4 custom-header" style={{ color: '#333' }}>
+              {/* &#x1F4DE; Phone Icon */}
                 {t('Contact.Contact Us')}
               </h2>
               <Form onSubmit={handleSubmit}>
@@ -165,14 +165,14 @@ const TechnicianContactUs: React.FC = () => {
 
                 <Col xs={12} md={6}>
                 <Form.Group controlId="formBasicMessage">
-                  <Form.Label className="custom-label my-2" style={{ color: '#333', fontWeight: 'bold' }}>
+                  <Form.Label className="custom-input custom-label my-2" style={{ color: '#333', fontWeight: 'bold' }}>
                     <FaPencilAlt  /> {/* Pen Icon */}
                     {t('Contact.Additional Details')}
                   </Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
-                    className="custom-textarea"
+                    className="custom-input custom-textarea"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
@@ -183,8 +183,8 @@ const TechnicianContactUs: React.FC = () => {
                 </Col>
                 </Row>
 
-                <Button variant="primary" type="submit" className='mt-3 mx-2' style={{ backgroundColor: "#ffc107", border: "none", color: "black", fontWeight:"700" }}> <FaEnvelopeOpenText  className='mx-1'  />{t('Contact.Send')}</Button>
-                <Button variant="primary"className='mt-3' style={{ backgroundColor: "#ffc107", border: "none", color: "black", fontWeight:"700" }} onClick={handleClearForm}> <FaTrash  />{t('Contact.Clear Form')}</Button>
+                <Button variant="primary" type="submit" className='complain-button heading-weight mt-3 mx-2' style={{ backgroundColor: "#ffc107", border: "none", color: "black"}}> <FaEnvelopeOpenText  className=' mx-1'  />{t('Contact.Send')}</Button>
+                <Button variant="primary"className='complain-button heading-weight mt-3' style={{ backgroundColor: "#ffc107", border: "none", color: "black"}} onClick={handleClearForm}> <FaTrash  />{t('Contact.Clear Form')}</Button>
               </Form>
             </div>
           </Col>

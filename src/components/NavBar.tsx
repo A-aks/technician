@@ -39,7 +39,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
     return (
         <>
             {['sm'].map((expand) => (
-                <Navbar expand={expand} className="bg-body-tertiary mb-1 fixed-top card m-1" sticky='top' style={{ fontWeight: "700" }}>
+                <Navbar expand={expand} className="heading-weight bg-body-tertiary mb-1 fixed-top card m-1" sticky='top'>
                     <Container className='rounded' style={{ background: '#f8f8f8' }} fluid>
                         <Image
                             src={process.env.PUBLIC_URL + 'icons8-tools-ios-17-filled-32.png'}
@@ -47,7 +47,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                             alt="icon"
                         />
                         <Navbar.Brand href="#" className='ms-2 '>
-                            <div className='flex flex-column m-0 p-0'><p className='p-0 m-0'>{t('Navbar.Technicianwale')}</p></div>
+                            <div className='heading-weight flex flex-column m-0 p-0'><p className='p-0 m-0'>{t('Navbar.Technicianwale')}</p></div>
                         </Navbar.Brand>
 
                         <Navbar.Toggle className='shadow-none border-0' aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={handleShow} />
@@ -63,21 +63,21 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                     style={{ filter: 'brightness(0) saturate(100%) invert(86%) sepia(30%) saturate(2464%) hue-rotate(329deg) brightness(108%) contrast(97%)' }}
                                     alt="icon"
                                 />
-                                <Offcanvas.Title className='justify-content-center ' style={{ fontWeight: "700", marginLeft: "4rem" }} id={`offcanvasNavbarLabel-expand-${expand}`}>
+                                <Offcanvas.Title className='heading-weight justify-content-center ' style={{ marginLeft: "4rem" }} id={`offcanvasNavbarLabel-expand-${expand}`}>
                                     {t('Navbar.Technicianwale')}
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body className='p-1' >
-                                <Nav className="justify-content-start flex-grow-1 pe-1 gap-1" style={{ fontWeight: "700" }} >
-                                    <p className='d-block d-sm-none bg-warning rounded text-center'>{t('Navbar.Service at your doorstep')}</p>
-                                    <Nav.Link onClick={handleClose} as={Link} to={'/'} className='nav-heading text-black mx-1' >{t('Navbar.Home')}</Nav.Link>
+                                <Nav className="heading-weight justify-content-start flex-grow-1 pe-1 gap-1"  >
+                                    <p className='heading-weight d-block d-sm-none bg-warning rounded text-center'>{t('Navbar.Service at your doorstep')}</p>
+                                    <Nav.Link onClick={handleClose} as={Link} to={'/'} className='heading-weight nav-heading text-black mx-1' >{t('Navbar.Home')}</Nav.Link>
                                     <Nav.Link onClick={handleClose} className='nav-heading text-black mx-1' as={Link} to={'/complain'} >{t('Navbar.Complain')}</Nav.Link>
                                     <Nav.Link onClick={handleClose} className='nav-heading text-black mx-1' as={Link} to={'/technician'} > {t('Navbar.Technician')}</Nav.Link>
                                     {/* <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/technicianPage'} > {t('Navbar.TechnicianPage')}</Nav.Link> */}
                                     <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' nav-heading text-black mx-1'>{t('Navbar.Contact us')}</Nav.Link>
-                                    <NavDropdown className='nav-heading text-black mx-1' style={{ fontWeight: "700" }} title={t('Navbar.Services')} id="basic-nav-dropdown">
-                                        <NavDropdown.Item className='custom-nav-item' href="/ac-repair" style={{ fontWeight: "700" }}>{t('Navbar.AC Repairing')} </NavDropdown.Item>
-                                        <NavDropdown.Item className='custom-nav-item' href="/refrigrator-repair" style={{ fontWeight: "700" }}>{t('Navbar.Refrigrator Repairing')}</NavDropdown.Item>
+                                    <NavDropdown className='nav-heading heading-weight  text-black mx-1' title={t('Navbar.Services')} id="basic-nav-dropdown">
+                                        <NavDropdown.Item className='nav-heading heading-weight ' href="/ac-repair" >{t('Navbar.AC Repairing')} </NavDropdown.Item>
+                                        <NavDropdown.Item className='nav-heading heading-weight ' href="/refrigrator-repair">{t('Navbar.Refrigrator Repairing')}</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">
                                             Another action
                                         </NavDropdown.Item>
@@ -88,20 +88,20 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     {isLoggedIn ? (
-                                        <Nav.Link onClick={handleLogout} className=' nav-heading text-black mx-1' as={Link} to={'/Login'} >Logout</Nav.Link>
+                                        <Nav.Link onClick={handleLogout} className='nav-heading heading-weight  text-black mx-1' as={Link} to={'/Login'} >Logout</Nav.Link>
                                     ) : (
-                                        <Nav.Link as={Link} to={'/Login'} className='nav-heading text-black mx-1' >{t('Navbar.Login')}</Nav.Link>
+                                        <Nav.Link as={Link} to={'/Login'} className='nav-heading heading-weight  text-black mx-1' >{t('Navbar.Login')}</Nav.Link>
                                     )}
                                     <Button
                                         variant=""
                                         onClick={toggleLanguage}
-                                        className="Translate-button mt-1 text-center d-sm-block mx- mx-sm-5 " style={{ fontWeight: "bold", }}>
+                                        className="heading-weight Translate-button mt-1 text-center d-sm-block mx- mx-sm-5 ">
                                         {i18n.language === 'en' ? 'हिन्दी' : 'English'}
                                     </Button>
                                 </Nav>
 
 
-                                <Nav className="justify-content-end flex-grow-1 pe-3 mt-2" style={{ fontWeight: "700" }}>
+                                <Nav className="heading-weight justify-content-end flex-grow-1 pe-3 mt-2" >
                                     <div className='d-block d-sm-none'>
                                         <hr />
                                         <p>{t('Navbar.Follow and Subscribe')}</p>

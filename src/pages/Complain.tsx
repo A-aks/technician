@@ -78,8 +78,8 @@ const Complain: React.FC = () => {
             <div className="container  p-3 d-flex flex-column "
               style={{ boxShadow: "0px 2px 10px rgba(255, 165, 0, 0.5)", borderRadius: "20px" }}>
               <h2
-                className="text-center mb-4 custom-header"
-                style={{ color: "#333", fontWeight: "bold" }}
+                className=" heading-weight text-center mb-4 custom-header"
+                style={{ color: "#333", }}
               >
                 
                 {t('Complain.New Complain')}
@@ -240,7 +240,7 @@ const Complain: React.FC = () => {
                 <Button
                   variant="primary"
                   type="submit"
-                  className="btn-block mt-3"
+                  className="complain-button heading-weight  btn-block mt-3"
                   style={{
                     backgroundColor: "#ffc107",
                     border: "none",
@@ -256,7 +256,7 @@ const Complain: React.FC = () => {
                 </Button>
                 <Button
                   variant="light"
-                  className="btn-block mt-3 mx-2"
+                  className="complain-button heading-weight btn-block mt-3 mx-2"
                   onClick={() => setFormData(initialFormData)}
                   style={{
                     backgroundColor: "#ffc107",
