@@ -82,12 +82,8 @@
 
 .card-3d {
   border-radius: 10px; /* Adjust the border radius to control the curvature of the card */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
+  box-shadow: 0 0 8px #ffc107;; /* Add a subtle box shadow for depth */
   padding: 20px; /* Add padding to create space between content and card edges */
-}
-
-.card-3d:hover {
-  box-shadow: 0 0 15px #ffc107; /* Increase the box shadow on hover for a more pronounced 3D effect */
 }
 
 .container-custom {

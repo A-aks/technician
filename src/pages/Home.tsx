@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardLink, Carousel, Col, Container, Image, Row } from 'react-bootstrap'
+import { Card, CardLink, Carousel, Col, Container, Image, Row, Button } from 'react-bootstrap'
 import { Search } from 'react-bootstrap-icons';
 import { Icon } from '../components/Icon';
 import { Link } from 'react-router-dom';
 import wepik from '../assets/wepik-export-20240410101805ufdL.png'
 import { useTranslation } from 'react-i18next';
-import { ThermometerSnow, Tools, Plug  } from 'react-bootstrap-icons';
+import { ThermometerSnow, Tools, Plug } from 'react-bootstrap-icons';
 import { RiThermometerLine } from 'react-icons/ri';
 import { GiWaterDrop } from 'react-icons/gi';
 import { FaPlug } from 'react-icons/fa';
 import { MdComputer, MdLocalCarWash, MdPhoneAndroid } from 'react-icons/md';
 import { IoMdHome } from 'react-icons/io';
-import { GiGardeningShears } from 'react-icons/gi';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
 import '../App.css'
+import { FaUser, FaStar, FaTools, FaMapMarkerAlt } from 'react-icons/fa';
+
 interface cardlist {
   id: string;
   Name: string;
@@ -92,10 +93,10 @@ export default function Home() {
       description: "Professional installation of security systems for homes and businesses. From CCTV cameras to alarm systems, we keep your property safe and secure.",
       route: "/security-system-installation",
     },
-  
+
   ];
-  
-  
+
+
   const offers = [
     {
       id: 1,
@@ -113,11 +114,43 @@ export default function Home() {
       description: 'Get a discount on electrical inspection with any package booking.',
     },
   ];
-
+  const featuredTechnicians = [
+    {
+      id: 1,
+      name: "John Doe",
+      profession: "Electrician",
+      rating: 4.8,
+      skills: ["Wiring", "Fixture Installation", "Troubleshooting"],
+      image: "https://th.bing.com/th/id/R.6fdb192256845ceb168e50e159b44054?rik=%2bUVk0O1gGXo4jg&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f7900000%2fJOHN-DOE-john-doe-7969105-1735-2560.jpg&ehk=xhK%2bO6UTbbC%2fDYt%2fW5cWEfNzJPqC0u%2buxyr%2bTMH%2fMec%3d&risl=&pid=ImgRaw&r=0", // Add image URL
+      experience: "10 years of experience", // Add experience
+      location: "New York, NY", // Add location
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      profession: "Plumber",
+      rating: 4.5,
+      skills: ["Pipe Repair", "Fixture Installation", "Water Heater Repair"],
+      image: "https://images-cdn.reedsy.com/avatar/239436/985f0f291e55e1ec326eb45549832f2f0ce66575.jpg", // Add image URL
+      experience: "8 years of experience", // Add experience
+      location: "Los Angeles, CA", // Add location
+    },
+    {
+      id: 3,
+      name: "Alex Johnson",
+      profession: "Handyman",
+      rating: 4.7,
+      skills: ["Carpentry", "Painting", "Furniture Assembly"],
+      image: "https://th.bing.com/th/id/OIP.dJQYb_qAziSYiEwxsXNXOwHaE8?rs=1&pid=ImgDetMain", // Add image URL
+      experience: "12 years of experience", // Add experience
+      location: "Chicago, IL", // Add location
+    },
+  ];
+  
   return (
     <div >
       <div className='text-center' >
-        <Carousel className=' md:cols-6' style={{ backgroundColor: "#FFB300" }}>
+        <Carousel className=' md:cols-6' style={{ backgroundColor: "Black" }}>
           <Carousel.Item>
             <Image className='opacity-100 shadow' height={250} rounded src="https://img.freepik.com/free-photo/man-servant-getting-payed-by-owner_23-2149587635.jpg?w=740&t=st=1712740643~exp=1712741243~hmac=3a4ab6ff2d9a82f1e3d3cc1ae677f8d85f090402a3ee84b5885f24c83c1f06c3" />
             <Carousel.Caption>
@@ -166,56 +199,86 @@ export default function Home() {
       </div>
 
       <Container fluid className=' d-flex flex-wrap justify-content-center align-items-center'>
-        <Link to="/complain" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color:"black"   }}>
+        <Link to="/complain" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color: "black" }}>
           <Icon iconName="ChatQuoteFill" color='white' size={25} />
           <p style={{ fontWeight: "700" }}>{t('Home.New Complain')}</p>
         </Link>
 
-        <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color:"black"}}>
+        <Link to="/technician" className='shadow m-2 p-2 rounded bg-warning text-center align-items-center d-flex flex-column justify-content-center' style={{ textDecoration: 'none', color: "black" }}>
           <Icon iconName="Search" size={25} color='white' />
           <p style={{ fontWeight: "700" }}>{t('Home.Search Technician')}</p>
         </Link>
 
       </Container>
       <Container fluid className="mt-5 " >
-      <h2 className="text-center mb-4">Service Categories</h2>
-      <Row className="justify-content-center">
-        {serviceCategories.map((category) => (
-          <Col sm={12} md={6} lg={6} key={category.id} style={{marginBottom:"1rem"}}>
-            <Link to={category.route} className="text-decoration-none">
-              <Card className="mb-3  "  style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px",height:"100%",width:"100%" }}>
+        <h2 className="text-center mb-4">Service Categories</h2>
+        <Row className="justify-content-center">
+          {serviceCategories.map((category) => (
+            <Col sm={12} md={6} lg={6} key={category.id} style={{ marginBottom: "1rem" }}>
+              <Link to={category.route} className="text-decoration-none">
+                <Card className="mb-3 " style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)", borderRadius: "20px", height: "100%", width: "100%" }}>
+                  <Card.Body>
+                    <div className='text-center'>
+                      {category.icon}
+                      <img src={category.image} style={{ height: "100px" }} />
+                    </div>
+
+                    <Card.Title className=" text-center ">{category.title}</Card.Title>
+                    <Card.Text>
+                      <p>{category.description}</p>
+                    </Card.Text>
+                    <div className="text-center">
+                      <Link to={category.route} className="btn btn-primary" style={{ backgroundColor: "#ffaa00" }}>Explore {category.title}</Link>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      <Container className="mt-5">
+        <h2 className="text-center mb-4">Special Offers</h2>
+        <Row className="justify-content-center">
+          {offers.map((offer) => (
+            <Col sm={12} md={6} lg={4} key={offer.id}>
+              <Card className="mb-3 shadow-sm special-offer-card">
                 <Card.Body>
-                  <div className='text-center'>
-                  {category.icon}
-                  <img src={category.image}  style={{height:"100px"}} />
-                  </div>
-                 
-                  <Card.Title className=" text-center ">{category.title}</Card.Title>
-                  <Card.Text>
-                    <p>{category.description}</p>
-                  </Card.Text>
+                  <Card.Title className="text-center">{offer.title}</Card.Title>
+                  <Card.Text className="text-center">{offer.description}</Card.Text>
                   <div className="text-center">
-                    <Link to={category.route} className="btn btn-primary"style={{backgroundColor:"#ffaa00"}}>Explore {category.title}</Link>
+                    <button className="btn btn-warning">Claim Offer</button>
                   </div>
                 </Card.Body>
               </Card>
-            </Link>
-          </Col>
-        ))}
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      <Container className="mt-5">
+      <Row>
+        <Col>
+          <h2 className="text-center mb-4">Featured Technicians</h2>
+        </Col>
       </Row>
-    </Container>
-   
-    <Container className="mt-5">
-      <h2 className="text-center mb-4">Special Offers</h2>
       <Row className="justify-content-center">
-        {offers.map((offer) => (
-          <Col sm={12} md={6} lg={4} key={offer.id}>
-            <Card className="mb-3 shadow-sm special-offer-card">
+        {featuredTechnicians.map((technician) => (
+          <Col key={technician.id} md={4} className="mb-4">
+            <Card className="h-100 shadow" style={{ boxShadow: "0px 8px 16px orange", borderRadius: "20px",height:"100%",width:"100%" }}>
+              <Card.Img variant="top" src={technician.image} alt={technician.name} style={{ height: "250px" }} />
               <Card.Body>
-                <Card.Title className="text-center">{offer.title}</Card.Title>
-                <Card.Text className="text-center">{offer.description}</Card.Text>
+                <Card.Title className="text-center">{technician.name}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted text-center">{technician.profession}</Card.Subtitle>
+                <Card.Text>
+                  <FaStar /> {technician.rating}<br />
+                  <FaTools /> {technician.experience}<br />
+                  <FaMapMarkerAlt /> {technician.location}
+                </Card.Text>
                 <div className="text-center">
-                  <button className="btn btn-primary">Claim Offer</button>
+                  <Button variant="warning">
+                    <FaUser /> Profile
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -223,7 +286,6 @@ export default function Home() {
         ))}
       </Row>
     </Container>
-
     </div>
   )
 }
