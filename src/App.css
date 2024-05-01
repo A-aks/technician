@@ -182,3 +182,162 @@
 .complain-button:active{
   transform: scale(0.95) !important;
 }
+
+/* CustomerForm.css */
+
+/* Ensure that your existing styles are placed above this comment */
+
+/* Add this style to make the buttons the same color */
+.custom-btn,
+.clear-button,
+.submit-button,
+.add-service-button {
+  
+  background-color: #ffc107;
+  border: none;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.add-service-button {
+  margin-top: 20px; /* Adjust the margin as needed */
+  flex-shrink: 0; 
+  /* Prevent add button from shrinking */
+}
+
+
+.custom-btn:hover,
+.clear-button:hover,
+.submit-button:hover,
+.add-service-button:hover {
+  background-color: #ff7f00; /* Darker yellow on hover */
+}
+
+/* Add this style for the card effect on customer details */
+.customer-details-box {
+  background-color: #fff; /* White background */
+  border: 1px solid #ffc107; /* Yellow border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.1); /* Yellow shadow */
+  padding: 20px; /* Padding around the content */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px; /* Add margin to create space between cards */
+}
+
+.customer-details-box:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+  box-shadow: 0 8px 16px rgba(255, 193, 7, 0.2); /* Darker yellow shadow on hover */
+}
+
+.customer-details-box div {
+  margin-bottom: 10px; /* Space between details */
+}
+
+.clear-button{
+  margin-right:20px;
+}
+/* Ensure that your existing styles are placed below this comment */
+
+/* Add this style to align service name input, charges input, and add button in a row */
+.add-service-row {
+  display: flex;
+  align-items: center;
+}
+
+.service-input {
+  flex: 1; /* Allow service input fields to grow and shrink */
+  margin-right: 10px; /* Add spacing between service input fields */
+}
+
+.add-service-button {
+  flex-shrink: 0; /* Prevent add button from shrinking */
+}
+.custom-input:focus {
+  border: 2px solid #ff7f00 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 12px #ff7f00 !important;
+  outline: #ff7f00 !important;
+}
+
+.custom-input:hover {
+  border-color: #ff7f00 !important;
+}
+
+.container-custom {
+  background-color: #ffc107; /* Yellow background color */
+  padding: 20px; /* Add padding to create space between the boundary and the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2); /* Yellow shadow effect */
+}
+.form-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  width: 600px;
+  /* Limit maximum width to prevent overlapping */
+  overflow: auto;
+}
+.form-box h1 {
+  text-align: center;
+}
+.user-info-panel {
+  position: fixed; /* Change position to fixed */
+  top: 0; /* Position from the top of the viewport */
+  right: -300px; /* Adjust as needed to hide initially */
+  width: 300px; /* Set the width of the panel */
+  height: 50%; /* Set the height to cover the entire viewport */
+  background-color: white;
+  border: 2px solid orange;
+  box-shadow: 0 0 10px orange;
+  padding: 20px;
+  border-radius: 5px;
+  transition: right 0.3s ease; /* Add transition for smooth sliding animation */
+}
+
+.user-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  color: orange;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.user-profile {
+  position: fixed;
+  right: 20px; /* Adjust the right position as needed */
+  display: flex;
+  align-items: center;
+}
+
+.user-profile button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.user-profile .username {
+  margin-left: 5px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .form-box {
+    width: 100%; /* Set width to 100% on smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+}
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Set height to viewport height to center vertically */
+}
