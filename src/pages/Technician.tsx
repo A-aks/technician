@@ -42,35 +42,33 @@ export default function Technician() {
   });
 
   return (
-    <div className="container mt-4" style={{ fontWeight: "700" }}>
-      <h2 className="mb-4 text-center" style={{ fontWeight: "700" }}>{t('technicians.technicians')}</h2>
+    <div className=" container mt-4" >
+      <h2 className="heading-weight mb-4 text-center" >{t('technicians.technicians')}</h2>
       <Row className="mb-4 justify-content-center">
         <Col md={8} className="d-flex gap-2">
           <Form.Select
-            className="custom-input mb-2"
-            style={{ fontWeight: "700" }}
+            className="heading-weight custom-input mb-2"
             value={selectedCategory}
             onChange={handleCategoryChange}
           >
-            <option value="All" style={{ fontWeight: "700" }}>{t('technicians.allSpecializations')}</option>
-            <option value="Refrigerator" style={{ fontWeight: "700" }}>{t('technicians.refrigerator')}</option>
-            <option value="AC" style={{ fontWeight: "700" }}>{t('technicians.ac')}</option>
+            <option value="All" >{t('technicians.allSpecializations')}</option>
+            <option value="Refrigerator" >{t('technicians.refrigerator')}</option>
+            <option value="AC" >{t('technicians.ac')}</option>
           </Form.Select>
           <Form.Select 
-            className=" custom-input mb-2"
-            style={{ fontWeight: "700" }}
+            className="heading-weight custom-input mb-2"
             value={selectedLocation}
             onChange={handleLocationChange}
           >
-            <option value="All" style={{ fontWeight: "700" }}>{t('technicians.allLocations')}</option>
-            <option value="Rewa" style={{ fontWeight: "700" }}>{t('technicians.rewa')}</option>
-            <option value="Satna" style={{ fontWeight: "700" }}>{t('technicians.satna')}</option>
+            <option value="All" >{t('technicians.allLocations')}</option>
+            <option value="Rewa" >{t('technicians.rewa')}</option>
+            <option value="Satna" >{t('technicians.satna')}</option>
           </Form.Select>
         </Col>
       </Row>
       <Row className="justify-content-center">
         {filteredTechnicians.map((technician) => (
-          <Col key={technician.id} md={5} className="mb-2">
+          <Col key={technician.id} md={5} className=" mb-2">
             <Card className="d-flex flex-row h-100" style={{ boxShadow: "0px 8px 16px rgba(255, 165, 0, 0.5)" }}>
               <div style={{ width: "35%", height: "auto" }}>
                 <Card.Img
@@ -80,8 +78,8 @@ export default function Technician() {
                 />
               </div>
               <Card.Body style={{ width: "65%", maxHeight: "130px" }}>
-                <Card.Title style={{ fontWeight: "700" }}>{technician.name}</Card.Title>
-                <Card.Text style={{ marginBottom: "3px" }}>
+                <Card.Title className=''>{technician.name}</Card.Title>
+                <Card.Text style={{ marginBottom: "3px" }} >
                   <strong>{t('technicians.specialization')} :</strong> {i18n.language === 'hi' ? technician.specialization.hi : technician.specialization.en}
                 </Card.Text>
                 <Card.Text style={{ marginBottom: "3px" }}>
