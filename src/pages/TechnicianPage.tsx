@@ -2,6 +2,8 @@ import React, { useState, ChangeEvent } from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import CustomerForm from './CustomerForm';
+import { PersonCircle } from 'react-bootstrap-icons'; 
+import Button from 'react-bootstrap/Button';
 
 const TechnicianPage = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,8 @@ const TechnicianPage = () => {
     serviceRequired: "",
     issueDescription: ""
   });
+  const [showUserInfo, setShowUserInfo] = useState(false);
+  const [userInfoPosition, setUserInfoPosition] = useState({ top: 0, left: 0 });
 
   const navigate = useNavigate();
 
@@ -35,10 +39,37 @@ const TechnicianPage = () => {
       ...formData,
       [name]: value
     });
-  };                                   
+  };     
+
+  const userProfile = {
+    username: "John Doe",
+    // Using PersonCircle icon as the avatar
+    avatar: <PersonCircle size={35} color="orange" />,
+    phoneNumber: "123-456-7890",
+  };
+  const handleUserProfileClick = () => {
+    // Navigate to the UserProfilePage
+    navigate("/user-profile");
+  };
+
+  const handleCloseUserInfo = () => {
+    // Close the user info side panel
+    setShowUserInfo(false);
+  };
+  
 
   return (
     <div>
+    {/* Display User Profile */}
+    <div className="user-profile">
+      {/* Display avatar */}
+      <button onClick={handleUserProfileClick} style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}>
+        {userProfile.avatar}
+      </button>
+      <span className="username" onClick={handleUserProfileClick} style={{ marginLeft: '5px', cursor: 'pointer' }}>{userProfile.username}</span>
+    </div>
+    
+      {/* Rest of the TechnicianPage content */}
       <ul className="nav nav-tabs" id="myTab" role="tablist">
         <li className="nav-item" role="presentation">
           <button
@@ -186,4 +217,5 @@ const TechnicianPage = () => {
     </div>
   );
 };
+
 export default TechnicianPage;
