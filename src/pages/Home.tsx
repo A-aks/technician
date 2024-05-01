@@ -228,7 +228,7 @@ export default function Home() {
                       <p>{category.description}</p>
                     </Card.Text>
                     <div className="text-center">
-                      <Link to={category.route} className="btn btn-primary" style={{ backgroundColor: "#ffaa00" }}>Explore {category.title}</Link>
+                      <Link to={category.route} style={{ backgroundColor: "#ffc107" }}><button type="button" className="btn btn-warning">Explore {category.title}</button></Link>
                     </div>
                   </Card.Body>
                 </Card>
