@@ -88,7 +88,7 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     {isLoggedIn ? (
-                                        <Nav.Link onClick={handleLogout} className='nav-heading heading-weight  text-black mx-1' as={Link} to={'/Login'} >Logout</Nav.Link>
+                                        <Nav.Link onClick={handleLogout} className='nav-heading heading-weight  text-black mx-1' as={Link} to={'/Login'} >{t('Navbar.Logout')}</Nav.Link>
                                     ) : (
                                         <Nav.Link as={Link} to={'/Login'} className='nav-heading heading-weight  text-black mx-1' >{t('Navbar.Login')}</Nav.Link>
                                     )}
