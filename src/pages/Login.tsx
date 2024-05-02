@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Image } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; 
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 import '../App.css'; 
 
 const Login: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
+
+  const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -39,20 +43,20 @@ const Login: React.FC<{ handleLogin: any }> = ({ handleLogin }) => {
       </Row>
       <Row className="justify-content-center">
         <Col xs={12} md={6}>
-          <h2 className="text-center">Login </h2>
+          <h2 className="text-center">{t('Login.Login')}</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicPhoneNumber">
-              <Form.Label  className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Phone Number</Form.Label>
-              <Form.Control type="tel" placeholder="Enter phone number" required value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}  className="custom-input" style={{ border: '2px solid #ccc', borderRadius: '4px', boxShadow: 'none' }} />
+              <Form.Label  className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>{t('Login.Phone Number')}</Form.Label>
+              <Form.Control type="tel" placeholder={t('Login.Enter phone number')} required value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}  className="custom-input" style={{ border: '2px solid #ccc', borderRadius: '4px', boxShadow: 'none' }} />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Label  className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}  className="custom-input" style={{ border: '2px solid #ccc', borderRadius: '4px', boxShadow: 'none' }} />
+              <Form.Label  className="custom-label" style={{ color: '#333', fontWeight: 'bold' }}>{t('Login.Password')}</Form.Label>
+              <Form.Control type="password" placeholder={t('Login.Password')}required value={password} onChange={(e) => setPassword(e.target.value)}  className="custom-input" style={{ border: '2px solid #ccc', borderRadius: '4px', boxShadow: 'none' }} />
             </Form.Group>
 
             <Button  type="submit" className='complain-button heading-weight mb-3 mt-3' disabled={loading} style={{ backgroundColor: "orange", border: "none", color: "white" }}>
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? t('Login.Logging in...') : t('Login.Login')}
             </Button>
 
             {error && <p className="text-danger">{error}</p>}

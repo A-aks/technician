@@ -82,6 +82,13 @@
              "Additional Details":"Additional Details",
              "Send":"Send",
              "Clear Form":"Clear Form"
+      },
+      "Login":{
+            "Phone Number":"Phone Number",
+            "Enter phone number":"Enter phone number",
+            "Password":"Password",
+            "Login":"Login",
+            "Logging in...":"Logging in..."
       }  
                 
   }

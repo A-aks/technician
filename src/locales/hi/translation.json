@@ -83,7 +83,14 @@
   "Additional Details":"एडिशनल डिटेल्स",
   "Send":"भेजे",
   "Clear Form":"क्लियर करे"
-}  
+},
+"Login":{
+  "Phone Number":"फोन नंबर",
+  "Enter phone number":"फोन नंबर लिखे",
+  "Password":"पासवर्ड",
+  "Login":"लॉगिन",
+  "Logging in...":"लॉगिन..."
+}    
 
 
 
