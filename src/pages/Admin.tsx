@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap'; // Import Button component from react-
 import technicianData from './technicianData.json';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
+import { useNavigate, Link } from 'react-router-dom';
 
 interface Technician {
   id: number;
@@ -17,6 +18,8 @@ interface Technician {
 }
 
 function Admin() {
+
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = React.useState("All Complaints");
   const Unregistred_Complained = [
     {
@@ -26,7 +29,88 @@ function Admin() {
       "technicianID": "null",
       "technicianName": "Sonu",
       "acquire": true,
-      "working_date": "12 March"
+      "working_date": "12 March",
+      id: "1"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "2"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "3"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "4"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "5"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "6"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "7"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "8"
+    },
+    {
+      "query": "AC mounting",
+      "created_by": "Ramu",
+      "status": "pending",
+      "technicianID": "null",
+      "technicianName": "",
+      "acquire": true,
+      "working_date": "12 March",
+      id: "9"
     },
     {
       "query": "AC mounting",
@@ -36,78 +120,7 @@ function Admin() {
       "technicianName": "",
       "acquire": true,
       "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
-    },
-    {
-      "query": "AC mounting",
-      "created_by": "Ramu",
-      "status": "pending",
-      "technicianID": "null",
-      "technicianName": "",
-      "acquire": true,
-      "working_date": "12 March"
+      , id: "10"
     }
   ]
 
@@ -119,7 +132,8 @@ function Admin() {
       "technicianID": "null",
       "technicianName": "Sonu",
       "acquire": true,
-      "working_date": "12 March"
+      "working_date": "12 March",
+      id: "1"
     },
     {
       "query": "AC mounting",
@@ -128,7 +142,8 @@ function Admin() {
       "technicianID": "null",
       "technicianName": "",
       "acquire": true,
-      "working_date": "12 March"
+      "working_date": "12 March",
+      id: "2"
     }
   ]
 
@@ -140,7 +155,8 @@ function Admin() {
       "technicianID": "2131",
       "technicianName": "Sonu",
       "acquire": true,
-      "working_date": "12 March"
+      "working_date": "12 March",
+      id: "1"
     },
     {
       "query": "AC mounting",
@@ -149,7 +165,8 @@ function Admin() {
       "technicianID": "311",
       "technicianName": "Raju",
       "acquire": true,
-      "working_date": "12 March"
+      "working_date": "12 March",
+      id: "2"
     }
   ]
 
@@ -163,90 +180,27 @@ function Admin() {
   const handleShow = () => setShow(true);
 
 
-
-  // Function to Add technician
-  const AddTechnician = (e: any) => {
-    e.preventDefault();
-    alert("Technician added");
+  // Function to Remove technician
+  const RemoveTechnician = (index: number, name: string) => {
+    alert("Technician " + name + " removed");
   }
 
-  // Function to Remove technician
-  const RemoveTechniciab = (index: number, name: string) => {
-    alert("Technician " + name + " removed");
+  // Function to Edit technician
+  const EditTechnician = (index: number, name: string) => {
+    navigate(`/add_technician/${index + 1}`)
   }
 
 
 
   return (
     <div>
-      <div className="profile d-flex justify-content-center align-items-center">
-        <div className="profile-content">
-          <div className="profile-card">
-            <div className="profile-card-wrapper">
-              <div className="card-header"></div>
-              {/* card-header */}
-              <div className="card-profile">
-                <img
-                  src="https://stupendous-lily-560d0d.netlify.app/assets/Admin-GvlX_wrk.jpg"
-                  alt="Profile"
-                />
-              </div>
-              {/* card-profile */}
-              <div className="card-content text-center rounded-buttons">
-                <h3 className="card-title">Amit......</h3>
-                <p className="text">
-                  Lorem ipsum dolor sit amet, sed magna etiam adipiscing elit. Mauris id elit tempor, dolor sed curabitur id justo congue, facilisis sem justo. Integer ut facilisis turpis. Praesent amet ullamcorper ante nec ipsum dolor.
-                </p>
-                <button
-                  className="btn primary-btn rounded-full"
-                  data-toggle="modal"
-                  data-target="#contact-modal"
-                >
-                  Get In Touch
-                </button>
-              </div>
-              {/* card-content */}
-              <div className="card-social text-center">
-                <ul>
-                  <li>
-                    <a
-                      className="btn primary-btn-outline rounded-full icon-btn btn-sm facebook"
-                      href="javascript:void(0)"
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="btn primary-btn-outline rounded-full icon-btn btn-sm twitter"
-                      href="javascript:void(0)"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="btn primary-btn-outline rounded-full icon-btn btn-sm instagram"
-                      href="javascript:void(0)"
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="btn primary-btn-outline rounded-full icon-btn btn-sm linkedin"
-                      href="javascript:void(0)"
-                    >
-                      <i className="fab fa-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
+      <div className='d-flex justify-content-end gap-2'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-person-fill-check" viewBox="0 0 16 16">
+          <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+        </svg>Welcome <span style={{ color: "#DBA800" }}>Admin</span>
+      </div>
 
 
       {/* Complaints + Technician tab*/}
@@ -281,24 +235,32 @@ function Admin() {
               <div className={`tab-pane fade show ${activeTab === "All Complaints" ? "active show" : ""}`} id="All Complaints" role="tabpanel" aria-labelledby="All Complaints-tab">
                 <table className="table">
                   <thead>
-                    <tr>
+                    <tr >
                       <th scope="col">S No.</th>
                       <th scope="col">Created by</th>
                       <th scope="col">Status</th>
                       <th scope="col">Query</th>
                       <th scope="col">Assign Tecnician</th>
+                      <th scope='col'>Available time</th>
+                      <th scope='col'></th>
                     </tr>
                   </thead>
                   <tbody>
                     {
                       Unregistred_Complained.map((complaint, index) => {
                         return (
-                          <tr key={index}>
+                          <tr key={index} style={{ cursor: "pointer" }}>
                             <th scope="row">{index + 1}</th>
                             <td>{complaint.created_by}</td>
                             <td>{complaint.status}</td>
                             <td>{complaint.query}</td>
-                            <td><Button onClick={handleShow} variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Assign technician</Button></td>
+                            <td>
+                              <Button onClick={handleShow} variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white", marginBlock: "2px" }}>Assign technician</Button>
+                            </td>
+                            <td>1:00pm - 4:00pm</td>
+                            <td >
+                              <Link to={`/complain/${complaint.id}`} style={{ color: "black" }}>View Details</Link>
+                            </td>
                           </tr>
                         )
                       })
@@ -306,6 +268,8 @@ function Admin() {
                   </tbody>
                 </table>
               </div>
+
+              {/* Pending Complaints */}
               <div className={`tab-pane fade ${activeTab === "Pending" ? "active show" : ""}`} id="Pending" role="tabpanel" aria-labelledby="Pending-tab">
                 <table className="table">
                   <thead>
@@ -315,18 +279,26 @@ function Admin() {
                       <th scope="col">Status</th>
                       <th scope="col">Query</th>
                       <th scope="col">Technician</th>
+                      <th scope="col">Technician time: </th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
                     {
                       Pending_Complained.map((complaint, index) => {
                         return (
-                          <tr key={index}>
+                          <tr key={index} style={{ cursor: "pointer" }}>
                             <th scope="row">{index + 1}</th>
                             <td>{complaint.created_by}</td>
                             <td>{complaint.status}</td>
                             <td>{complaint.query}</td>
                             <td>{complaint.technicianName.length > 1 ? complaint.technicianName : "Not aquired"}</td>
+                            <td>3:00pm - 4:00pm</td>
+                            <td><Button onClick={handleShow} variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Edit technician</Button></td>
+                            <td >
+                              <Link to={`/complain/${complaint.id}`} style={{ color: "black" }}>View Details</Link>
+                            </td>
                           </tr>
                         )
                       })
@@ -343,18 +315,22 @@ function Admin() {
                       <th scope="col">Status</th>
                       <th scope="col">Query</th>
                       <th scope="col">Technician</th>
+                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
                     {
                       Resolved_Complained.map((complaint, index) => {
                         return (
-                          <tr key={index}>
+                          <tr key={index} style={{ cursor: "pointer" }}>
                             <th scope="row">{index + 1}</th>
                             <td>{complaint.created_by}</td>
                             <td style={{ color: "darkgreen" }}>{complaint.status}</td>
                             <td>{complaint.query}</td>
                             <td>{complaint.technicianName.length > 1 ? complaint.technicianName : "Not aquired"}</td>
+                            <td >
+                              <Link to={`/complain/${complaint.id}`} style={{ color: "black" }}>View Details</Link>
+                            </td>
                           </tr>
                         )
                       })
@@ -437,7 +413,7 @@ function Admin() {
         {/* Technician Tab */}
         <div className="tab-pane fade" id="technician-tab-pane" role="tabpanel" aria-labelledby="technician-tab" tabIndex={0}>
           <div className='d-flex justify-content-end mr-3'>
-            <td><Button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Add technician</Button></td>
+            <td><Button onClick={() => { navigate("/add_technician") }} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Add technician</Button></td>
           </div>
           <table className="table">
             <thead>
@@ -446,66 +422,30 @@ function Admin() {
                 <th scope="col">Name</th>
                 <th scope="col">Is Available</th>
                 <th scope="col">Expert in</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               {
                 technicianData.technicians.map((technician, index) => {
                   return (
-                    <tr key={index}>
+                    <tr key={index} style={{ cursor: "pointer" }}>
                       <th scope="row">{index + 1}</th>
                       <td>{technician.name}</td>
                       <td>10AM-8PM</td>
                       <td>{technician.specialization.en}</td>
-                      <td onClick={() => RemoveTechniciab(index, technician.name)} style={{ cursor: "pointer" }}><i className="fa fa-trash" style={{ color: "red" }}></i></td>
+                      <td onClick={() => EditTechnician(index, technician.name)} style={{ cursor: "pointer" }}><i className="fa fa-edit" style={{ color: "#DBA800" }}></i></td>
+                      <td onClick={() => RemoveTechnician(index, technician.name)} style={{ cursor: "pointer" }}><i className="fa fa-trash" style={{ color: "red" }}></i></td>
                     </tr>
                   )
                 })
               }
             </tbody>
           </table>
-
-
-
-          {/* Modal to Add technician */}
-
-          <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">New Technician</h1>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                  <form>
-                    <div className="mb-3">
-                      <label htmlFor="recipient-name" className="col-form-label">Name:</label>
-                      <input type="text" className="form-control add-foucs" id="recipient-name" />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="recipient-name" className="col-form-label">Expert in:</label>
-                      <input type="text" className="form-control add-foucs" id="expert-in" />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="avl-time-in" className="col-form-label">Available Time:</label>
-                      <input type="text" className="form-control add-foucs" id="avl-time-in" />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="location-in" className="col-form-label">Location :</label>
-                      <input type="text" className="form-control add-foucs" id="location-in" />
-                    </div>
-                  </form>
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" onClick={(e) => { AddTechnician(e) }} style={{ backgroundColor: "#DBA800", border: "none" }} className="btn btn-primary">Add Technician</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

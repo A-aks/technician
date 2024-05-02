@@ -2,7 +2,7 @@
   "technicians": [
     {
       "id": 1,
-      "name":"Ashutosh Tiwari",
+      "name": "Ashutosh Tiwari",
       "specialization": {
         "en": "Refrigerator",
         "hi": "रेफ्रिजरेटर"
@@ -12,6 +12,7 @@
         "en": "Rewa",
         "hi": "रीवा"
       },
+      "time": "9-6pm",
       "contact": "9837883388"
     },
     {
@@ -26,6 +27,7 @@
         "en": "Satna",
         "hi": "सतना"
       },
+      "time": "9-6pm",
       "contact": "9837883388"
     },
     {
@@ -40,6 +42,7 @@
         "en": "Satna",
         "hi": "सतना"
       },
+      "time": "9-6pm",
       "contact": "9837883388"
     },
     {
@@ -54,6 +57,7 @@
         "en": "Rewa",
         "hi": "रीवा"
       },
+      "time": "9-6pm",
       "contact": "9837883388"
     }
   ]
