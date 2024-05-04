@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 // Import the CSS file for styling
-
+import { useNavigate } from "react-router-dom";
 const CustomerForm = () => {
+  const navigate = useNavigate();
   const initialCustomerData = [
     {
       id: 1,
@@ -62,12 +63,19 @@ const CustomerForm = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     handleClearForm();
+    navigate("/Techpage");
   };
 
   return (
     <div className="centered-container">
       <div className="form-box">
-        <h1>Customer Details</h1>
+      <div className="customer-details-header">
+        <button type="button" className="close" aria-label="Close" onClick={handleCloseModal}>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+        <h1>Customer Details  </h1>
+      
         {customerData.map((customer) => (
           <div className="customer-details-box" key={customer.id}>
             <div>
