@@ -4,6 +4,14 @@ import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import CustomerForm from './CustomerForm';
 import { PersonCircle } from 'react-bootstrap-icons'; 
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
+interface ResolvedItem {
+  name: string;
+  phoneNumber: string;
+  // Add more properties if necessary
+}
 
 const TechnicianPage = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +23,9 @@ const TechnicianPage = () => {
   });
   const [showUserInfo, setShowUserInfo] = useState(false);
   const [userInfoPosition, setUserInfoPosition] = useState({ top: 0, left: 0 });
+  const [showModal, setShowModal] = useState(false);
+  const [resolvedItemDetails, setResolvedItemDetails] = useState<ResolvedItem | null>(null);
+
 
   const navigate = useNavigate();
 
@@ -57,6 +68,18 @@ const TechnicianPage = () => {
     setShowUserInfo(false);
   };
   
+  const handleViewDetails = (details: ResolvedItem) => {
+    // Set resolved item details and open modal
+    console.log("Resolved Item Details:", details);
+    setResolvedItemDetails(details);
+    console.log("Show Modal:", true);
+    setShowModal(true); // Ensure showModal state is set to true
+  };
+
+  const handleCloseModal = () => {
+    // Close modal
+    setShowModal(false);
+  };
 
   return (
     <div>
@@ -204,13 +227,26 @@ const TechnicianPage = () => {
                 <td>Laptop</td>
                 <td>Resolved</td>
                 <td>
-                  <button className="btn btn-primary">View Details</button>
+                <button className="btn btn-primary" onClick={() => resolvedItemDetails && handleViewDetails(resolvedItemDetails)}>View Details</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+     {/* Modal for Resolved Item Details */}
+     <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Resolved Item Details</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* Display resolved item details here */}
+          {/* Example: */}
+          <p>Name: {resolvedItemDetails?.name}</p>
+          <p>Mobile Number: {resolvedItemDetails?.phoneNumber}</p>
+        </Modal.Body>
+      </Modal>
+      
       <Routes>
       <Route path="/customer-form" element={<CustomerForm />}/>
       </Routes>
