@@ -76,8 +76,8 @@ const NavBar: React.FC<{ isLoggedIn: boolean; handleLogout: () => void }> = ({ i
                                     {/* <Nav.Link onClick={handleClose} className=' text-start btn custom-btn-primary px-2 rounded-md text-black fw-5 mt-1 md:mt-0' as={Link} to={'/technicianPage'} > {t('Navbar.TechnicianPage')}</Nav.Link> */}
                                     <Nav.Link as={Link} onClick={handleClose} to={'/contact-us'} className=' nav-heading text-black mx-1'>{t('Navbar.Contact us')}</Nav.Link>
                                     <NavDropdown className='nav-heading heading-weight  text-black mx-1' title={t('Navbar.Services')} id="basic-nav-dropdown">
-                                        <NavDropdown.Item className='nav-heading heading-weight ' href="/ac-repair" >{t('Navbar.AC Repairing')} </NavDropdown.Item>
-                                        <NavDropdown.Item className='nav-heading heading-weight ' href="/refrigrator-repair">{t('Navbar.Refrigrator Repairing')}</NavDropdown.Item>
+                                        <NavDropdown.Item className='nav-heading heading-weight ' as={Link} to={'/ac-repair'} >{t('Navbar.AC Repairing')} </NavDropdown.Item>
+                                        <NavDropdown.Item className='nav-heading heading-weight ' as={Link} to={'/refrigrator-repair'}>{t('Navbar.Refrigrator Repairing')}</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">
                                             Another action
                                         </NavDropdown.Item>
