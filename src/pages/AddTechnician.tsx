@@ -9,7 +9,7 @@ function AddTechnician() {
     const [edit, setEdit] = React.useState(false);
     const [technician, setTechnician] = React.useState<typeof technicianData.technicians[0] | null>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (id) {
             const technicianId = parseInt(id, 10);
             const foundTechnician = technicians.find((tech) => tech.id === technicianId);
@@ -72,14 +72,16 @@ function AddTechnician() {
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label htmlFor="available-time" className="form-label">Available Time:</label>
-                            <input type="text" value={technician ? technician.time : " "} onChange={(e) => {
-                                if (technician) { // Only update if technician is not null
-                                    setTechnician({
-                                        ...technician, // Retain other properties
-                                        time: e.target.value, // Update the name
-                                    });
+                            <input type="text" value={technician ? technician.time : " "} onChange={
+                                (e) => {
+                                    if (technician) {
+                                        setTechnician({
+                                            ...technician,
+                                            time: e.target.value,
+                                        });
+                                    }
                                 }
-                            }} className="form-control custom-input" id="available-time" required />
+                            } className="form-control custom-input" id="available-time" required />
                         </div>
                     </div>
                 </div>
@@ -125,6 +127,12 @@ function AddTechnician() {
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
+                            <label htmlFor="pan-number" className="form-label">Pan Number:</label>
+                            <input type="number" className="custom-input form-control" id="pan-number" required />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
                             <label htmlFor="branch-name" className="form-label">Branch Name:</label>
                             <input type="text" className="form-control custom-input" id="branch-number" required />
                         </div>
@@ -133,6 +141,18 @@ function AddTechnician() {
 
                 {/* Files grouped horizontally */}
                 <div className="row">
+                    <div className="col-md-6"> {/* Check for proper row/col structure */}
+                        <div className="mb-3">
+                            <label htmlFor="profile-photo" className="form-label">Profile Photo:</label>
+                            <input type="file" className="form-control custom-input" id="profile-photo" accept="image/*" required />
+                        </div>
+                    </div>
+                    <div className="col-md-6"> {/* Check for proper row/col structure */}
+                        <div className="mb-3">
+                            <label htmlFor="pan-photo" className="form-label">Pan Photo:</label>
+                            <input type="file" className="form-control custom-input" id="pan-photo" accept="image/*" required />
+                        </div>
+                    </div>
                     <div className="col-md-6"> {/* Check for proper row/col structure */}
                         <div className="mb-3">
                             <label htmlFor="passbook-photo" className="form-label">Passbook Photo:</label>

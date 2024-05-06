@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './Admin.css'; // Import custom CSS if needed
 import Modal from 'react-bootstrap/Modal';
@@ -173,11 +173,37 @@ function Admin() {
   const technicians: Technician[] = technicianData.technicians;
 
   const [search, setSearch] = useState<string>("");
+  const [selectFilterTechnician, setselectFilterTechnician] = useState<string>("all");
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+  // Filter technician
+  const [FilterTechnician, setFilterTechnician] = useState<Technician[]>([]);
+
+
+  useEffect(() => {
+    let filteredTechnicians = technicianData.technicians;
+
+    // Apply 'search' filter
+    if (search) {
+      filteredTechnicians = filteredTechnicians.filter(technician =>
+        technician.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+    // Apply 'selectFilterTechnician' filter
+    if (selectFilterTechnician !== "all") {
+      filteredTechnicians = filteredTechnicians.filter(technician =>
+        technician.specialization.en === selectFilterTechnician
+      );
+    }
+
+    setFilterTechnician(filteredTechnicians);
+  }, [search, selectFilterTechnician, technicianData.technicians]);
 
 
   // Function to Remove technician
@@ -345,23 +371,30 @@ function Admin() {
                   <Modal.Title>Add Technicians from list below...</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='d-flex flex-column'>
-                  <input value={search} onChange={(e) => { setSearch(e.target.value) }} type="search" name="technician_search" id="" />
-
+                  <div className='d-flex justify-content-between align-items-center gap-2'>
+                    <input style={{ width: "70%" }} value={search} onChange={(e) => { setSearch(e.target.value) }} type="search" name="technician_search" id="" />
+                    <select name="filter" id="" value={selectFilterTechnician ? selectFilterTechnician : "all"}
+                      onChange={(e) => setselectFilterTechnician(e.target.value)}>
+                      <option value="all">All</option>
+                      <option value="ac">AC</option>
+                      <option value="refrigerator">Refrigerator</option>
+                    </select>
+                  </div>
                   <div>
                     {
-                      search.length > 0 ? (
+                      FilterTechnician ? (
                         <Card style={{ width: '100%', overflowY: "scroll", height: "50vh" }} className='mt-3'>
                           <ListGroup variant="flush">
                             {
-                              technicianData.technicians.filter((technician) => technician.name.toLowerCase().includes(search.toLowerCase())).map((technician, index) => {
+                              FilterTechnician.map((technician, index) => {
                                 return (
                                   <ListGroup.Item style={{ cursor: "pointer" }} key={index} className='list_technician d-flex justify-content-between align-items-center cursor-pointer'>
                                     <div className=''>
                                       <h4>{technician.name}</h4>
                                       <p>{technician.specialization.en} Technician</p>
                                     </div>
-                                    <div>
-                                      <p>{technician.location.en}</p>
+                                    <div className='d-flex justify-content-center flex-column'>
+                                      <pre>Free Slot: 2-4pm</pre>
                                       <button style={{ backgroundColor: "#DBA800", border: "black", color: "white" }} className="btn btn-technician" onClick={() => { alert("Technician added") }}>Add</button>
                                     </div>
                                   </ListGroup.Item>
@@ -382,8 +415,8 @@ function Admin() {
                                         <h4>{technician.name}</h4>
                                         <p>{technician.specialization.en} Technician</p>
                                       </div>
-                                      <div>
-                                        <p>{technician.location.en}</p>
+                                      <div className='d-flex justify-content-center flex-column'>
+                                        <pre>Free Slot: 2-4pm</pre>
                                         <button style={{ backgroundColor: "#DBA800", border: "black", color: "white" }} className="btn btn-technician" onClick={() => { alert("Technician added") }}>Add</button>
                                       </div>
                                     </ListGroup.Item>
@@ -413,7 +446,9 @@ function Admin() {
         {/* Technician Tab */}
         <div className="tab-pane fade" id="technician-tab-pane" role="tabpanel" aria-labelledby="technician-tab" tabIndex={0}>
           <div className='d-flex justify-content-end mr-3'>
-            <td><Button onClick={() => { navigate("/add_technician") }} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Add technician</Button></td>
+            <Link to={'/add_technician'} >
+              <td><Button type="button" className="btn btn-primary" variant="primary" style={{ backgroundColor: "#DBA800", border: "none", color: "white" }}>Add technician</Button></td>
+            </Link>
           </div>
           <table className="table">
             <thead>
